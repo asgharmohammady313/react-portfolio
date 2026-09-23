@@ -1,0 +1,42 @@
+/* =================================
+   ABOUT RESPONSIVE
+================================= */
+
+@media (max-width: 1024px) {
+  .about-container {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .about-image,
+  .about-content {
+    width: 100%;
+  }
+
+  .about-content {
+    text-align: center;
+  }
+
+  .about-image {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-content h2 {
+    font-size: 30px;
+  }
+
+  .about-content p {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+}
