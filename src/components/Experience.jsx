@@ -53,7 +53,7 @@ function Experience() {
             </div>
 
             <time>
-              2023 - Present
+              2023 - 2024
             </time>
 
           </div>
@@ -86,7 +86,7 @@ function Experience() {
             </div>
 
             <time>
-              2023 - 2026
+              2024 - Present
             </time>
 
           </div>
