@@ -1,9 +1,8 @@
-
 import {
   Mail,
   MapPin,
   Phone,
-  Send
+  Send,
 } from "lucide-react";
 
 import "./Contact.css";
@@ -11,6 +10,7 @@ import "./Contact.css";
 function Contact() {
   return (
     <section id="contact" className="contact section">
+
       <div className="section-container">
 
         {/* SECTION HEADER */}
@@ -33,33 +33,43 @@ function Contact() {
 
             <div className="contact-info">
 
+              {/* EMAIL */}
               <div className="contact-info-item">
+
                 <div className="contact-icon">
                   <Mail size={20} />
                 </div>
 
                 <div>
                   <span>Email</span>
-                  <a href="mailto:asghar@example.com">
+
+                  <a href="mailto:asgharmohammady313@email.com">
                     asgharmohammady313@email.com
                   </a>
                 </div>
+
               </div>
 
+              {/* PHONE */}
               <div className="contact-info-item">
+
                 <div className="contact-icon">
                   <Phone size={20} />
                 </div>
 
                 <div>
                   <span>Phone</span>
-                  <a href="tel:+93700000000">
+
+                  <a href="tel:+93766989461">
                     +93 0766989461
                   </a>
                 </div>
+
               </div>
 
+              {/* LOCATION */}
               <div className="contact-info-item">
+
                 <div className="contact-icon">
                   <MapPin size={20} />
                 </div>
@@ -68,17 +78,24 @@ function Contact() {
                   <span>Location</span>
                   <p>Kabul, Afghanistan</p>
                 </div>
+
               </div>
 
             </div>
-
           </div>
 
+
           {/* CONTACT FORM */}
-          <form className="contact-form">
+          <form
+            className="contact-form"
+            onSubmit={(e) => e.preventDefault()}
+          >
 
             <div className="form-group">
-              <label htmlFor="name">Name</label>
+
+              <label htmlFor="name">
+                Name
+              </label>
 
               <input
                 type="text"
@@ -86,10 +103,15 @@ function Contact() {
                 name="name"
                 placeholder="Your name"
               />
+
             </div>
 
+
             <div className="form-group">
-              <label htmlFor="email">Email</label>
+
+              <label htmlFor="email">
+                Email
+              </label>
 
               <input
                 type="email"
@@ -97,10 +119,15 @@ function Contact() {
                 name="email"
                 placeholder="Your email"
               />
+
             </div>
 
+
             <div className="form-group">
-              <label htmlFor="message">Message</label>
+
+              <label htmlFor="message">
+                Message
+              </label>
 
               <textarea
                 id="message"
@@ -108,7 +135,9 @@ function Contact() {
                 rows="6"
                 placeholder="Your message"
               ></textarea>
+
             </div>
+
 
             <button
               type="submit"
@@ -122,7 +151,140 @@ function Contact() {
 
         </div>
 
+
+        {/* =========================================
+            FOOTER
+        ========================================= */}
+
+        <footer id="footer-section">
+
+          <div className="footer-container">
+
+            {/* COLUMN 1 */}
+            <div className="footer-div-item">
+
+              <h4>
+                <a href="#home">
+                  Portfolio
+                </a>
+              </h4>
+
+              <p>
+                <a href="#about">
+                  About
+                </a>
+              </p>
+
+              <p>
+                <a href="#skills">
+                  Skills
+                </a>
+              </p>
+
+              <p>
+                <a href="#projects">
+                  Projects
+                </a>
+              </p>
+
+            </div>
+
+
+            {/* COLUMN 2 */}
+            <div className="footer-div-item">
+
+              <h4>
+                <a href="#about">
+                  About Me
+                </a>
+              </h4>
+
+              <p>
+                <a href="#about">
+                  About
+                </a>
+              </p>
+
+              <p>
+                <a href="#experience">
+                  Experience
+                </a>
+              </p>
+
+              <p>
+                <a href="#skills">
+                  Skills
+                </a>
+              </p>
+
+            </div>
+
+
+            {/* COLUMN 3 */}
+            <div className="footer-div-item">
+
+              <h4>
+                <a href="#projects">
+                  Projects
+                </a>
+              </h4>
+
+              <p>
+                <a href="#projects">
+                  My Projects
+                </a>
+              </p>
+
+              <p>
+                <a href="#skills">
+                  Technologies
+                </a>
+              </p>
+
+              <p>
+                <a href="#contact">
+                  Contact Me
+                </a>
+              </p>
+
+            </div>
+
+
+            {/* COLUMN 4 */}
+            <div className="footer-div-item">
+
+              <h4>
+                <a href="#contact">
+                  Contact
+                </a>
+              </h4>
+
+              <p>
+                <a href="mailto:asgharmohammady313@email.com">
+                  Email
+                </a>
+              </p>
+
+              <p>
+                <a href="tel:+93766989461">
+                  Phone
+                </a>
+              </p>
+
+              <p>
+                <a href="#contact">
+                  Kabul, Afghanistan
+                </a>
+              </p>
+
+            </div>
+
+          </div>
+
+        </footer>
+
       </div>
+
     </section>
   );
 }

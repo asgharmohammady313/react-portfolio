@@ -5,7 +5,6 @@
 :root {
   --hero-bg: #050816;
   --hero-bg-second: #07101f;
-
   --hero-text: #ffffff;
   --hero-muted: #aab5d0;
 
@@ -20,20 +19,17 @@
 
   --hero-laptop-dark: #050914;
   --hero-laptop-light: #1b2434;
-
   --hero-code: #d7e4ff;
 }
 
 
 /* =========================================
    LIGHT MODE
-   Controlled by Navbar
 ========================================= */
 
 body.light-mode {
   --hero-bg: #f4f9ff;
   --hero-bg-second: #eaf6ff;
-
   --hero-text: #101828;
   --hero-muted: #526071;
 
@@ -48,7 +44,6 @@ body.light-mode {
 
   --hero-laptop-dark: #07111c;
   --hero-laptop-light: #1b2938;
-
   --hero-code: #26364f;
 }
 
@@ -122,7 +117,6 @@ body.light-mode {
 
   font-size: 14px;
   font-weight: 700;
-
   letter-spacing: 4px;
 }
 
@@ -146,7 +140,6 @@ body.light-mode {
 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
   background-clip: text;
 }
 
@@ -154,7 +147,6 @@ body.light-mode {
   margin: 20px 0 15px;
 
   font-size: clamp(22px, 3vw, 32px);
-
   color: var(--hero-text);
 }
 
@@ -176,15 +168,12 @@ body.light-mode {
 
 .hero-buttons {
   display: flex;
-
   gap: 15px;
-
   flex-wrap: wrap;
 }
 
 .hero-btn {
   display: inline-flex;
-
   align-items: center;
   justify-content: center;
 
@@ -193,7 +182,6 @@ body.light-mode {
   border-radius: 30px;
 
   text-decoration: none;
-
   font-weight: 700;
 
   transition: all 0.3s ease;
@@ -255,12 +243,12 @@ body.light-mode {
 
 /* =========================================
    SOCIAL ICONS
-   BELOW BUTTONS
 ========================================= */
 
 .hero-socials {
   display: flex;
   align-items: center;
+
   gap: 14px;
   margin-top: 28px;
 }
@@ -295,6 +283,7 @@ body.light-mode {
 
 .hero-socials a:hover {
   transform: translateY(-4px);
+
   color: #ffffff;
   background: var(--hero-cyan);
 
@@ -316,7 +305,6 @@ body.light-mode {
   display: flex;
 
   gap: 12px;
-
   flex-wrap: wrap;
 
   margin-top: 25px;
@@ -328,7 +316,6 @@ body.light-mode {
   border-radius: 20px;
 
   background: var(--hero-card);
-
   border: 1px solid var(--hero-cyan-soft);
 
   color: var(--hero-muted);
@@ -347,7 +334,6 @@ body.light-mode {
   height: 650px;
 
   display: flex;
-
   align-items: center;
   justify-content: center;
 }
@@ -375,8 +361,7 @@ body.light-mode {
 
   filter: blur(20px);
 
-  animation:
-    glowPulse 4s ease-in-out infinite;
+  animation: glowPulse 4s ease-in-out infinite;
 }
 
 @keyframes glowPulse {
@@ -414,8 +399,7 @@ body.light-mode {
     inset 0 0 20px var(--hero-cyan),
     inset 0 0 50px var(--hero-cyan-soft);
 
-  animation:
-    circleRotate 12s linear infinite;
+  animation: circleRotate 12s linear infinite;
 
   transition:
     border-color 0.4s ease,
@@ -460,7 +444,6 @@ body.light-mode {
   height: 300px;
 
   display: flex;
-
   align-items: center;
   justify-content: center;
 }
@@ -474,17 +457,16 @@ body.light-mode {
   height: 270px;
 
   border-radius: 50%;
-
   overflow: hidden;
 
-  border: 5px solid var(--hero-cyan-glow);
+  border: 4px solid var(--hero-cyan-glow);
 
   background: var(--hero-bg-second);
 
+  /* کاهش Shadow عکس */
   box-shadow:
-    0 0 15px var(--hero-cyan),
-    0 0 35px var(--hero-cyan-glow),
-    0 0 80px var(--hero-cyan-soft);
+    0 0 10px rgba(0, 234, 255, 0.25),
+    0 0 20px rgba(0, 234, 255, 0.10);
 
   transition:
     background 0.4s ease,
@@ -497,23 +479,31 @@ body.light-mode {
   height: 100%;
 
   object-fit: cover;
-
   display: block;
 }
 
 
 /* =========================================
    PROFILE RINGS
-   Animated Neon Lines
+   CLEAR SEPARATE ROTATING LINES
 ========================================= */
 
 .profile-ring {
   position: absolute;
+
   border-radius: 50%;
+
   pointer-events: none;
+
+  z-index: 6;
 }
 
-/* First moving ring */
+
+/* =========================================
+   FIRST MOVING RING
+   CYAN
+========================================= */
+
 .ring-one {
   width: 320px;
   height: 320px;
@@ -523,15 +513,23 @@ body.light-mode {
   border-top-color: var(--hero-cyan);
   border-right-color: var(--hero-cyan);
 
+  /*
+     بسیار کم Shadow
+     تا خط کاملاً جدا دیده شود
+  */
   box-shadow:
-    0 0 8px var(--hero-cyan),
-    0 0 18px var(--hero-cyan-glow),
-    0 0 35px var(--hero-cyan-soft);
+    0 0 3px rgba(0, 234, 255, 0.35);
 
-  animation: ringRotate 4s linear infinite;
+  animation:
+    ringRotate 4s linear infinite;
 }
 
-/* Second moving ring */
+
+/* =========================================
+   SECOND MOVING RING
+   PURPLE
+========================================= */
+
 .ring-two {
   width: 350px;
   height: 350px;
@@ -541,15 +539,21 @@ body.light-mode {
   border-bottom-color: #a970ff;
   border-left-color: #a970ff;
 
+  /*
+     بسیار کم Shadow
+  */
   box-shadow:
-    0 0 8px #a970ff,
-    0 0 18px rgba(169, 112, 255, 0.5),
-    0 0 35px rgba(169, 112, 255, 0.25);
+    0 0 3px rgba(169, 112, 255, 0.30);
 
-  animation: ringRotateReverse 6s linear infinite;
+  animation:
+    ringRotateReverse 6s linear infinite;
 }
 
-/* Clockwise */
+
+/* =========================================
+   RING ROTATION
+========================================= */
+
 @keyframes ringRotate {
   from {
     transform: rotate(0deg);
@@ -560,7 +564,6 @@ body.light-mode {
   }
 }
 
-/* Counter-clockwise */
 @keyframes ringRotateReverse {
   from {
     transform: rotate(360deg);
@@ -669,7 +672,6 @@ body.light-mode {
   content: "";
 
   position: absolute;
-
   inset: 0;
 
   background:
@@ -691,11 +693,9 @@ body.light-mode {
   height: 32px;
 
   display: flex;
-
   align-items: center;
 
   gap: 6px;
-
   padding: 0 10px;
 
   border-bottom:
@@ -744,7 +744,6 @@ body.light-mode {
     monospace;
 
   font-size: 11px;
-
   line-height: 1.75;
 
   color: var(--hero-code);
@@ -829,7 +828,6 @@ body.light-mode {
   position: relative;
 
   width: 108%;
-
   height: 28px;
 
   margin-left: -4%;
@@ -900,9 +898,7 @@ body.light-mode {
   color: var(--hero-cyan);
 
   font-family: monospace;
-
   font-size: 20px;
-
   font-weight: bold;
 
   opacity: 0.75;
@@ -957,14 +953,13 @@ body.light-mode {
 }
 
 
-
 /* =========================================
    STARS
-   More + Bigger + Brighter
 ========================================= */
 
 .stars {
   position: absolute;
+
   inset: 0;
 
   z-index: 1;
@@ -1042,7 +1037,9 @@ body.light-mode {
 }
 
 
-/* Star animation */
+/* =========================================
+   STAR ANIMATION
+========================================= */
 
 @keyframes starMove {
   0% {

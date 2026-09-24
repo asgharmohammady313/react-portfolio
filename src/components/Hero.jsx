@@ -53,7 +53,7 @@ function Hero() {
               href="#projects"
               className="hero-btn primary"
             >
-              View My Work
+              View My project
             </a>
 
             <a
