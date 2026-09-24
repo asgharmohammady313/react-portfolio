@@ -69,13 +69,14 @@ function Navbar() {
 
           {/* Download CV */}
           <a
-            href="/Asghar-CV.pdf"
+            href="/CV/Asghar-Mohammadi-CV.png"
             download
             className="download-cv"
           >
             <Download size={16} />
             Download CV
           </a>
+
 
           {/* Dark / Light Mode - آخرین دکمه */}
           <button
