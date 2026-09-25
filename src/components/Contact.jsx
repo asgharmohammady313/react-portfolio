@@ -1,3 +1,4 @@
+
 import {
   Mail,
   MapPin,
@@ -10,7 +11,6 @@ import "./Contact.css";
 function Contact() {
   return (
     <section id="contact" className="contact section">
-
       <div className="section-container">
 
         {/* SECTION HEADER */}
@@ -23,7 +23,6 @@ function Contact() {
 
           {/* CONTACT INFORMATION */}
           <div className="contact-content">
-
             <h3>Let's work together</h3>
 
             <p>
@@ -35,41 +34,34 @@ function Contact() {
 
               {/* EMAIL */}
               <div className="contact-info-item">
-
                 <div className="contact-icon">
                   <Mail size={20} />
                 </div>
 
                 <div>
                   <span>Email</span>
-
                   <a href="mailto:asgharmohammady313@email.com">
                     asgharmohammady313@email.com
                   </a>
                 </div>
-
               </div>
 
               {/* PHONE */}
               <div className="contact-info-item">
-
                 <div className="contact-icon">
                   <Phone size={20} />
                 </div>
 
                 <div>
                   <span>Phone</span>
-
                   <a href="tel:+93766989461">
                     +93 0766989461
                   </a>
                 </div>
-
               </div>
 
               {/* LOCATION */}
               <div className="contact-info-item">
-
                 <div className="contact-icon">
                   <MapPin size={20} />
                 </div>
@@ -78,12 +70,10 @@ function Contact() {
                   <span>Location</span>
                   <p>Kabul, Afghanistan</p>
                 </div>
-
               </div>
 
             </div>
           </div>
-
 
           {/* CONTACT FORM */}
           <form
@@ -92,7 +82,6 @@ function Contact() {
           >
 
             <div className="form-group">
-
               <label htmlFor="name">
                 Name
               </label>
@@ -102,13 +91,11 @@ function Contact() {
                 id="name"
                 name="name"
                 placeholder="Your name"
+                autoComplete="name"
               />
-
             </div>
 
-
             <div className="form-group">
-
               <label htmlFor="email">
                 Email
               </label>
@@ -118,13 +105,11 @@ function Contact() {
                 id="email"
                 name="email"
                 placeholder="Your email"
+                autoComplete="email"
               />
-
             </div>
 
-
             <div className="form-group">
-
               <label htmlFor="message">
                 Message
               </label>
@@ -134,35 +119,26 @@ function Contact() {
                 name="message"
                 rows="6"
                 placeholder="Your message"
-              ></textarea>
-
+              />
             </div>
-
 
             <button
               type="submit"
               className="contact-submit"
             >
-              Send Message
+              <span>Send Message</span>
               <Send size={17} />
             </button>
 
           </form>
-
         </div>
 
-
-        {/* =========================================
-            FOOTER
-        ========================================= */}
-
+        {/* FOOTER */}
         <footer id="footer-section">
-
           <div className="footer-container">
 
             {/* COLUMN 1 */}
             <div className="footer-div-item">
-
               <h4>
                 <a href="#home">
                   Portfolio
@@ -186,13 +162,10 @@ function Contact() {
                   Projects
                 </a>
               </p>
-
             </div>
-
 
             {/* COLUMN 2 */}
             <div className="footer-div-item">
-
               <h4>
                 <a href="#about">
                   About Me
@@ -216,13 +189,10 @@ function Contact() {
                   Skills
                 </a>
               </p>
-
             </div>
-
 
             {/* COLUMN 3 */}
             <div className="footer-div-item">
-
               <h4>
                 <a href="#projects">
                   Projects
@@ -246,13 +216,10 @@ function Contact() {
                   Contact Me
                 </a>
               </p>
-
             </div>
-
 
             {/* COLUMN 4 */}
             <div className="footer-div-item">
-
               <h4>
                 <a href="#contact">
                   Contact
@@ -276,17 +243,15 @@ function Contact() {
                   Kabul, Afghanistan
                 </a>
               </p>
-
             </div>
 
           </div>
-
         </footer>
 
       </div>
-
     </section>
   );
 }
 
 export default Contact;
+

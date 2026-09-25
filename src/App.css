@@ -1,8 +1,22 @@
+
 /* =========================================
    GLOBAL THEME TRANSITION
 ========================================= */
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
 body {
+  margin: 0;
+  overflow-x: hidden;
   transition:
     background-color 0.5s ease,
     color 0.5s ease;
@@ -18,6 +32,23 @@ body *::after {
     box-shadow 0.4s ease;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* =========================================
+   GLOBAL RESPONSIVE CONTAINER
+========================================= */
+
+.section-container {
+  width: min(1200px, 92%);
+  margin: 0 auto;
+}
+
+.section {
+  width: 100%;
+}
 
 /* =========================================
    LIGHT MODE - MAIN BACKGROUND
@@ -27,7 +58,6 @@ body.light-mode {
   background: #f4f7fb;
   color: #111827;
 }
-
 
 /* =========================================
    NAVBAR
@@ -43,6 +73,10 @@ body.light-mode .navbar-logo {
   color: #111827;
 }
 
+body.light-mode .navbar-logo span {
+  color: #2563eb;
+}
+
 body.light-mode .navbar-links a {
   color: #374151;
 }
@@ -51,6 +85,9 @@ body.light-mode .navbar-links a:hover {
   color: #2563eb;
 }
 
+body.light-mode .mobile-menu {
+  color: #111827;
+}
 
 /* =========================================
    HERO
@@ -86,19 +123,30 @@ body.light-mode .hero-secondary:hover {
   background: #ffffff;
 }
 
+body.light-mode .hero-socials a {
+  color: #374151;
+  border-color: #d1d5db;
+  background: #ffffff;
+}
+
+body.light-mode .hero-socials a:hover {
+  color: #2563eb;
+  border-color: #2563eb;
+}
 
 /* =========================================
    SECTION TITLES
 ========================================= */
 
-body.light-mode .section-title h2 {
+body.light-mode .section-title h1,
+body.light-mode .section-title h2,
+body.light-mode .section-title h3 {
   color: #111827;
 }
 
 body.light-mode .section-title p {
   color: #2563eb;
 }
-
 
 /* =========================================
    ABOUT
@@ -109,6 +157,7 @@ body.light-mode .about {
   color: #111827;
 }
 
+body.light-mode .about h1,
 body.light-mode .about h2,
 body.light-mode .about h3 {
   color: #111827;
@@ -117,7 +166,6 @@ body.light-mode .about h3 {
 body.light-mode .about p {
   color: #4b5563;
 }
-
 
 /* =========================================
    SKILLS
@@ -128,6 +176,7 @@ body.light-mode .skills {
   color: #111827;
 }
 
+body.light-mode .skills h1,
 body.light-mode .skills h2,
 body.light-mode .skills h3 {
   color: #111827;
@@ -139,8 +188,9 @@ body.light-mode .skills p {
 
 body.light-mode .skill-card {
   background: #ffffff;
+  color: #111827;
   border-color: #e5e7eb;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
 }
 
 body.light-mode .skill-card:hover {
@@ -150,6 +200,29 @@ body.light-mode .skill-card:hover {
     0 0 25px rgba(37, 99, 235, 0.1);
 }
 
+body.light-mode .skill-card h3 {
+  color: #111827;
+}
+
+body.light-mode .skill-card p {
+  color: #6b7280;
+}
+
+body.light-mode .skill-icon {
+  color: #2563eb;
+}
+
+body.light-mode .skill-progress {
+  background: #e5e7eb;
+}
+
+body.light-mode .skill-progress span {
+  background: linear-gradient(
+    90deg,
+    #7c3aed,
+    #2563eb
+  );
+}
 
 /* =========================================
    PROJECTS
@@ -160,6 +233,7 @@ body.light-mode .projects {
   color: #111827;
 }
 
+body.light-mode .projects h1,
 body.light-mode .projects h2,
 body.light-mode .projects h3 {
   color: #111827;
@@ -169,20 +243,20 @@ body.light-mode .projects p {
   color: #4b5563;
 }
 
-
-/* PROJECT CARDS */
+/* =========================================
+   PROJECT CARDS
+========================================= */
 
 body.light-mode .project-card {
   background: #ffffff;
+  color: #111827;
   border-color: #e5e7eb;
-
   box-shadow:
     0 10px 30px rgba(0, 0, 0, 0.06);
 }
 
 body.light-mode .project-card:hover {
   border-color: rgba(37, 99, 235, 0.4);
-
   box-shadow:
     0 25px 60px rgba(0, 0, 0, 0.12),
     0 0 30px rgba(37, 99, 235, 0.12);
@@ -196,22 +270,51 @@ body.light-mode .project-content p {
   color: #6b7280;
 }
 
-
-/* PROJECT TAGS */
+/* =========================================
+   PROJECT TAGS
+========================================= */
 
 body.light-mode .project-tags span {
   background: #eff6ff;
   color: #2563eb;
-  border-color: #dbeafe;
+  border: 1px solid #dbeafe;
 }
 
+/* =========================================
+   PROJECT NAVIGATION
+========================================= */
 
-/* VIEW ALL PROJECTS */
+body.light-mode .project-nav-button {
+  background: #ffffff;
+  color: #111827;
+  border-color: #d1d5db;
+}
+
+body.light-mode .project-nav-button:hover {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+}
+
+/* =========================================
+   PROJECT DOTS
+========================================= */
+
+body.light-mode .project-dot {
+  background: #cbd5e1;
+}
+
+body.light-mode .project-dot.active {
+  background: #2563eb;
+}
+
+/* =========================================
+   VIEW ALL PROJECTS
+========================================= */
 
 body.light-mode .view-projects {
   color: #2563eb;
 }
-
 
 /* =========================================
    CONTACT
@@ -222,6 +325,7 @@ body.light-mode .contact {
   color: #111827;
 }
 
+body.light-mode .contact h1,
 body.light-mode .contact h2,
 body.light-mode .contact h3 {
   color: #111827;
@@ -231,19 +335,20 @@ body.light-mode .contact p {
   color: #4b5563;
 }
 
-
-/* CONTACT CARDS */
+/* =========================================
+   CONTACT CARDS
+========================================= */
 
 body.light-mode .contact-card {
   background: #ffffff;
   border-color: #e5e7eb;
-
   box-shadow:
     0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
-
-/* INPUTS */
+/* =========================================
+   CONTACT INPUTS
+========================================= */
 
 body.light-mode input,
 body.light-mode textarea {
@@ -264,7 +369,6 @@ body.light-mode textarea:focus {
     0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
-
 /* =========================================
    BUTTONS
 ========================================= */
@@ -272,7 +376,6 @@ body.light-mode textarea:focus {
 body.light-mode button {
   color: #111827;
 }
-
 
 /* =========================================
    DOWNLOAD CV
@@ -287,9 +390,8 @@ body.light-mode .download-cv:hover {
   background: #2563eb;
 }
 
-
 /* =========================================
-   DARK / LIGHT BUTTON
+   THEME BUTTON
 ========================================= */
 
 .theme-button {
@@ -300,7 +402,6 @@ body.light-mode .theme-button {
   background: #111827;
   color: #ffffff;
   border-color: #111827;
-
   box-shadow:
     0 5px 15px rgba(0, 0, 0, 0.15);
 }
@@ -308,12 +409,10 @@ body.light-mode .theme-button {
 body.light-mode .theme-button:hover {
   background: #2563eb;
   border-color: #2563eb;
-
   transform:
     rotate(20deg)
     scale(1.1);
 }
-
 
 /* =========================================
    FOOTER
@@ -328,59 +427,19 @@ body.light-mode footer p {
   color: #d1d5db;
 }
 
-
 /* =========================================
-   SOCIAL ICONS
-========================================= */
-
-body.light-mode .hero-socials a {
-  color: #374151;
-  border-color: #d1d5db;
-  background: #ffffff;
-}
-
-body.light-mode .hero-socials a:hover {
-  color: #2563eb;
-  border-color: #2563eb;
-}
-
-
-/* =========================================
-   MOBILE MENU
-========================================= */
-
-body.light-mode .mobile-menu {
-  color: #111827;
-}
-
-/* Responsive */
-/* =================================
    GLOBAL RESPONSIVE
-================================= */
+========================================= */
 
-* {
-  box-sizing: border-box;
+@media (max-width: 1000px) {
+  .section-container {
+    width: 92%;
+  }
 }
 
-html {
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-}
-
-body {
-  margin: 0;
-  overflow-x: hidden;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-.section-container {
-  width: min(1200px, 92%);
-  margin: 0 auto;
-}
+/* =========================================
+   TABLET
+========================================= */
 
 @media (max-width: 768px) {
   .section-container {
@@ -391,9 +450,17 @@ img {
     padding-top: 70px;
     padding-bottom: 70px;
   }
+
+  body * {
+    max-width: 100%;
+  }
 }
 
-@media (max-width: 480px) {
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
   .section-container {
     width: 92%;
   }
@@ -407,170 +474,73 @@ img {
     font-size: 30px;
   }
 }
-/* =================================
-   LIGHT MODE - ABOUT
-================================= */
 
-body.light-mode .about {
-  background: #ffffff;
-  color: #111827;
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+  .section-container {
+    width: 92%;
+  }
+
+  .section {
+    padding-top: 55px;
+    padding-bottom: 55px;
+  }
+
+  .section-title h2 {
+    font-size: 27px;
+  }
 }
 
-body.light-mode .about h2,
-body.light-mode .about h3 {
-  color: #111827;
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+  .section-container {
+    width: 94%;
+  }
+
+  .section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .section-title h2 {
+    font-size: 24px;
+  }
 }
 
-body.light-mode .about p {
-  color: #4b5563;
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 3px;
 }
 
+/* =========================================
+   REDUCED MOTION
+========================================= */
 
-/* =================================
-   LIGHT MODE - SKILLS
-================================= */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 
-body.light-mode .skills {
-  background: #f4f7fb;
-  color: #111827;
+  body,
+  body *,
+  body *::before,
+  body *::after {
+    transition: none !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }
 
-body.light-mode .skills h2,
-body.light-mode .skills h3 {
-  color: #111827;
-}
-
-body.light-mode .skills p {
-  color: #4b5563;
-}
-
-body.light-mode .skill-card {
-  background: #ffffff;
-  color: #111827;
-  border-color: #e5e7eb;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-}
-
-body.light-mode .skill-card h3 {
-  color: #111827;
-}
-
-body.light-mode .skill-card p {
-  color: #6b7280;
-}
-
-
-/* =================================
-   LIGHT MODE - PROJECTS
-================================= */
-
-body.light-mode .projects {
-  background: #ffffff;
-  color: #111827;
-}
-
-body.light-mode .projects h2,
-body.light-mode .projects h3 {
-  color: #111827;
-}
-
-body.light-mode .projects p {
-  color: #4b5563;
-}
-
-body.light-mode .project-card {
-  background: #ffffff;
-  color: #111827;
-  border-color: #e5e7eb;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-}
-
-body.light-mode .project-content h3 {
-  color: #111827;
-}
-
-body.light-mode .project-content p {
-  color: #6b7280;
-}
-
-body.light-mode .project-tags span {
-  background: #eff6ff;
-  color: #2563eb;
-  border-color: #dbeafe;
-}
-
-
-
-/* =================================
-   LIGHT MODE - GENERAL SECTIONS
-================================= */
-
-/* ABOUT */
-body.light-mode .about {
-  background: #ffffff;
-  color: #111827;
-}
-
-body.light-mode .about h1,
-body.light-mode .about h2,
-body.light-mode .about h3 {
-  color: #111827;
-}
-
-body.light-mode .about p {
-  color: #4b5563;
-}
-
-
-/* SKILLS */
-body.light-mode .skills {
-  background: #f4f7fb;
-  color: #111827;
-}
-
-body.light-mode .skills h1,
-body.light-mode .skills h2,
-body.light-mode .skills h3 {
-  color: #111827;
-}
-
-body.light-mode .skills p {
-  color: #4b5563;
-}
-
-body.light-mode .skill-card {
-  background: #ffffff;
-  color: #111827;
-  border-color: #e5e7eb;
-}
-
-
-/* PROJECTS */
-body.light-mode .projects {
-  background: #ffffff;
-  color: #111827;
-}
-
-body.light-mode .projects h1,
-body.light-mode .projects h2,
-body.light-mode .projects h3 {
-  color: #111827;
-}
-
-body.light-mode .projects p {
-  color: #4b5563;
-}
-
-body.light-mode .project-card {
-  background: #ffffff;
-  color: #111827;
-  border-color: #e5e7eb;
-}
-
-
-/* PROJECT TAGS */
-body.light-mode .project-tags span {
-  background: #eff6ff;
-  color: #2563eb;
-  border-color: #dbeafe;
-}

@@ -1,26 +1,28 @@
+
 import { useState } from "react";
+
 import {
   Download,
   Menu,
   X,
   Sun,
-  Moon
+  Moon,
 } from "lucide-react";
 
 import "./Navbar.css";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-
-  // Dark / Light Mode
   const [darkMode, setDarkMode] = useState(true);
 
+  // Close mobile menu
   const closeMenu = () => {
     setMenuOpen(false);
   };
 
+  // Toggle dark / light mode
   const toggleTheme = () => {
-    setDarkMode(!darkMode);
+    setDarkMode((prevMode) => !prevMode);
     document.body.classList.toggle("light-mode");
   };
 
@@ -28,20 +30,19 @@ function Navbar() {
     <header className="navbar">
       <div className="navbar-container">
 
-        {/* Logo */}
+        {/* LOGO */}
         <a
           href="#home"
           className="navbar-logo"
           onClick={closeMenu}
+          aria-label="Asghar Mohammadi Portfolio"
         >
           <span>A</span>S
         </a>
 
-        {/* Navigation */}
+        {/* NAVIGATION */}
         <nav
-          className={`navbar-links ${
-            menuOpen ? "active" : ""
-          }`}
+          className={`navbar-links ${menuOpen ? "active" : ""}`}
         >
           <a href="#home" onClick={closeMenu}>
             Home
@@ -64,25 +65,35 @@ function Navbar() {
           </a>
         </nav>
 
-        {/* Right Side Buttons */}
+        {/* RIGHT SIDE ACTIONS */}
         <div className="navbar-actions">
 
-          {/* Download CV */}
+          {/* DOWNLOAD CV */}
           <a
             href="/CV/Asghar-Mohammadi-CV.png"
-            download
+            download="Asghar-Mohammadi-CV.png"
             className="download-cv"
+            aria-label="Download Asghar Mohammadi CV"
           >
             <Download size={16} />
-            Download CV
+            <span>Download CV</span>
           </a>
 
-
-          {/* Dark / Light Mode - آخرین دکمه */}
+          {/* DARK / LIGHT MODE */}
           <button
+            type="button"
             className="theme-button"
             onClick={toggleTheme}
-            aria-label="Toggle dark and light mode"
+            aria-label={
+              darkMode
+                ? "Switch to light mode"
+                : "Switch to dark mode"
+            }
+            title={
+              darkMode
+                ? "Light mode"
+                : "Dark mode"
+            }
           >
             {darkMode ? (
               <Sun size={19} />
@@ -93,13 +104,23 @@ function Navbar() {
 
         </div>
 
-        {/* Mobile Menu */}
+        {/* MOBILE MENU */}
         <button
+          type="button"
           className="mobile-menu"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
+          onClick={() => setMenuOpen((prev) => !prev)}
+          aria-label={
+            menuOpen
+              ? "Close navigation menu"
+              : "Open navigation menu"
+          }
+          aria-expanded={menuOpen}
         >
-          {menuOpen ? <X /> : <Menu />}
+          {menuOpen ? (
+            <X size={24} />
+          ) : (
+            <Menu size={24} />
+          )}
         </button>
 
       </div>
@@ -108,3 +129,4 @@ function Navbar() {
 }
 
 export default Navbar;
+

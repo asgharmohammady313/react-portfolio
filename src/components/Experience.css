@@ -1,12 +1,23 @@
+
+/* =================================
+   EXPERIENCE SECTION
+================================= */
+
 .experience {
+  width: 100%;
   border-bottom: 1px solid rgba(91, 135, 180, 0.2);
 }
 
+/* =================================
+   TIMELINE
+================================= */
+
 .timeline {
   position: relative;
-
   padding-left: 45px;
 }
+
+/* Timeline Line */
 
 .timeline::before {
   content: "";
@@ -22,12 +33,19 @@
   background: #2b4e72;
 }
 
+/* =================================
+   TIMELINE ITEM
+================================= */
+
 .timeline-item {
   position: relative;
 
   display: grid;
 
-  grid-template-columns: 48px 1fr auto;
+  grid-template-columns:
+    48px
+    minmax(0, 1fr)
+    auto;
 
   gap: 15px;
 
@@ -35,6 +53,14 @@
 
   margin-bottom: 25px;
 }
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+/* =================================
+   TIMELINE DOT
+================================= */
 
 .timeline-dot {
   position: absolute;
@@ -52,6 +78,10 @@
     0 0 12px #8d49ff;
 }
 
+/* =================================
+   TIMELINE ICON
+================================= */
+
 .timeline-icon {
   width: 42px;
   height: 42px;
@@ -60,16 +90,26 @@
   place-items: center;
 
   border: 1px solid #9b3fff;
-
   border-radius: 7px;
 
   color: #b45cff;
 
   background: rgba(113, 39, 255, 0.06);
+
+  flex-shrink: 0;
 }
 
 .timeline-icon svg {
   width: 19px;
+  height: 19px;
+}
+
+/* =================================
+   TIMELINE CONTENT
+================================= */
+
+.timeline-content {
+  min-width: 0;
 }
 
 .timeline-content h3 {
@@ -78,6 +118,7 @@
   color: #bb5cff;
 
   font-size: 12px;
+  line-height: 1.4;
 }
 
 .timeline-content strong {
@@ -88,6 +129,7 @@
   color: white;
 
   font-size: 10px;
+  line-height: 1.4;
 }
 
 .timeline-content p {
@@ -96,9 +138,14 @@
   color: #a4b2c6;
 
   font-size: 9px;
-
   line-height: 1.5;
+
+  overflow-wrap: anywhere;
 }
+
+/* =================================
+   DATE
+================================= */
 
 .timeline-item time {
   color: #aebbd0;
@@ -108,14 +155,185 @@
   white-space: nowrap;
 }
 
-@media (max-width: 600px) {
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 900px) {
+
+  .timeline {
+    padding-left: 42px;
+  }
 
   .timeline-item {
-    grid-template-columns: 45px 1fr;
+    grid-template-columns:
+      44px
+      minmax(0, 1fr)
+      auto;
+
+    gap: 13px;
+
+    margin-bottom: 28px;
+  }
+
+  .timeline-dot {
+    left: -36px;
+  }
+
+  .timeline-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .timeline-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .timeline-content h3 {
+    font-size: 12px;
+  }
+
+  .timeline-content strong {
+    font-size: 10px;
+  }
+
+  .timeline-content p {
+    font-size: 9px;
+  }
+
+  .timeline-item time {
+    font-size: 9px;
+  }
+}
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+
+  .timeline {
+    padding-left: 32px;
+  }
+
+  .timeline::before {
+    left: 7px;
+  }
+
+  .timeline-item {
+    display: grid;
+
+    grid-template-columns:
+      40px
+      minmax(0, 1fr);
+
+    gap: 10px;
+
+    align-items: start;
+
+    margin-bottom: 30px;
+  }
+
+  .timeline-dot {
+    left: -30px;
+
+    width: 10px;
+    height: 10px;
+  }
+
+  .timeline-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .timeline-icon svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .timeline-content {
+    padding-top: 2px;
+  }
+
+  .timeline-content h3 {
+    font-size: 11px;
+  }
+
+  .timeline-content strong {
+    font-size: 9px;
+  }
+
+  .timeline-content p {
+    font-size: 8.5px;
+    line-height: 1.6;
   }
 
   .timeline-item time {
     grid-column: 2;
+
+    margin-top: 4px;
+
+    font-size: 9px;
+
+    white-space: normal;
+  }
+}
+
+/* =================================
+   SMALL MOBILE
+================================= */
+
+@media (max-width: 400px) {
+
+  .timeline {
+    padding-left: 28px;
   }
 
+  .timeline::before {
+    left: 6px;
+  }
+
+  .timeline-item {
+    grid-template-columns:
+      36px
+      minmax(0, 1fr);
+
+    gap: 9px;
+
+    margin-bottom: 27px;
+  }
+
+  .timeline-dot {
+    left: -26px;
+
+    width: 9px;
+    height: 9px;
+  }
+
+  .timeline-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .timeline-icon svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .timeline-content h3 {
+    font-size: 10px;
+  }
+
+  .timeline-content strong {
+    font-size: 8.5px;
+  }
+
+  .timeline-content p {
+    font-size: 8px;
+  }
+
+  .timeline-item time {
+    font-size: 8.5px;
+  }
 }

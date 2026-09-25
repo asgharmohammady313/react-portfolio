@@ -1,3 +1,4 @@
+
 /* =========================================
    THEME VARIABLES
 ========================================= */
@@ -7,21 +8,16 @@
   --hero-bg-second: #07101f;
   --hero-text: #ffffff;
   --hero-muted: #aab5d0;
-
   --hero-cyan: #00eaff;
   --hero-cyan-soft: rgba(0, 234, 255, 0.15);
   --hero-cyan-glow: rgba(0, 234, 255, 0.6);
-
   --hero-card: rgba(255, 255, 255, 0.05);
-
   --hero-star: #ffffff;
   --hero-star-glow: #00eaff;
-
   --hero-laptop-dark: #050914;
   --hero-laptop-light: #1b2434;
   --hero-code: #d7e4ff;
 }
-
 
 /* =========================================
    LIGHT MODE
@@ -32,21 +28,16 @@ body.light-mode {
   --hero-bg-second: #eaf6ff;
   --hero-text: #101828;
   --hero-muted: #526071;
-
   --hero-cyan: #009fc4;
   --hero-cyan-soft: rgba(0, 159, 196, 0.12);
   --hero-cyan-glow: rgba(0, 159, 196, 0.35);
-
   --hero-card: rgba(0, 159, 196, 0.06);
-
   --hero-star: #009fc4;
   --hero-star-glow: rgba(0, 159, 196, 0.45);
-
   --hero-laptop-dark: #07111c;
   --hero-laptop-light: #1b2938;
   --hero-code: #26364f;
 }
-
 
 /* =========================================
    HERO
@@ -81,7 +72,6 @@ body.light-mode {
     color 0.4s ease;
 }
 
-
 /* =========================================
    HERO CONTAINER
 ========================================= */
@@ -94,12 +84,11 @@ body.light-mode {
   margin: auto;
 
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 
   align-items: center;
   gap: 30px;
 }
-
 
 /* =========================================
    LEFT CONTENT
@@ -108,6 +97,7 @@ body.light-mode {
 .hero-content {
   position: relative;
   z-index: 20;
+  min-width: 0;
 }
 
 .hero-small-title {
@@ -126,6 +116,8 @@ body.light-mode {
   font-size: clamp(45px, 6vw, 82px);
   line-height: 1.05;
   font-weight: 800;
+
+  overflow-wrap: anywhere;
 }
 
 .hero-content h1 span {
@@ -147,6 +139,8 @@ body.light-mode {
   margin: 20px 0 15px;
 
   font-size: clamp(22px, 3vw, 32px);
+  line-height: 1.3;
+
   color: var(--hero-text);
 }
 
@@ -161,13 +155,14 @@ body.light-mode {
   margin-bottom: 30px;
 }
 
-
 /* =========================================
    BUTTONS
 ========================================= */
 
 .hero-buttons {
   display: flex;
+  align-items: center;
+
   gap: 15px;
   flex-wrap: wrap;
 }
@@ -176,6 +171,7 @@ body.light-mode {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 8px;
 
   padding: 13px 25px;
 
@@ -186,7 +182,6 @@ body.light-mode {
 
   transition: all 0.3s ease;
 }
-
 
 /* =========================================
    PRIMARY BUTTON
@@ -209,7 +204,6 @@ body.light-mode {
     0 0 20px var(--hero-cyan),
     0 0 40px var(--hero-cyan-glow);
 }
-
 
 /* =========================================
    SECONDARY BUTTON
@@ -240,7 +234,6 @@ body.light-mode {
     0 0 30px var(--hero-cyan-soft);
 }
 
-
 /* =========================================
    SOCIAL ICONS
 ========================================= */
@@ -250,7 +243,10 @@ body.light-mode {
   align-items: center;
 
   gap: 14px;
+
   margin-top: 28px;
+
+  flex-wrap: wrap;
 }
 
 .hero-socials a {
@@ -285,6 +281,7 @@ body.light-mode {
   transform: translateY(-4px);
 
   color: #ffffff;
+
   background: var(--hero-cyan);
 
   box-shadow:
@@ -295,7 +292,6 @@ body.light-mode {
 .hero-socials a:hover i {
   color: #ffffff;
 }
-
 
 /* =========================================
    MINI TECHNOLOGIES
@@ -323,7 +319,6 @@ body.light-mode {
   font-size: 12px;
 }
 
-
 /* =========================================
    HERO VISUAL
 ========================================= */
@@ -336,8 +331,9 @@ body.light-mode {
   display: flex;
   align-items: center;
   justify-content: center;
-}
 
+  min-width: 0;
+}
 
 /* =========================================
    BACKGROUND GLOW
@@ -362,6 +358,8 @@ body.light-mode {
   filter: blur(20px);
 
   animation: glowPulse 4s ease-in-out infinite;
+
+  pointer-events: none;
 }
 
 @keyframes glowPulse {
@@ -376,7 +374,6 @@ body.light-mode {
     opacity: 1;
   }
 }
-
 
 /* =========================================
    NEON CIRCLE
@@ -430,7 +427,6 @@ body.light-mode {
   }
 }
 
-
 /* =========================================
    PROFILE
 ========================================= */
@@ -457,16 +453,16 @@ body.light-mode {
   height: 270px;
 
   border-radius: 50%;
+
   overflow: hidden;
 
   border: 4px solid var(--hero-cyan-glow);
 
   background: var(--hero-bg-second);
 
-  /* کاهش Shadow عکس */
   box-shadow:
     0 0 10px rgba(0, 234, 255, 0.25),
-    0 0 20px rgba(0, 234, 255, 0.10);
+    0 0 20px rgba(0, 234, 255, 0.1);
 
   transition:
     background 0.4s ease,
@@ -479,13 +475,12 @@ body.light-mode {
   height: 100%;
 
   object-fit: cover;
+
   display: block;
 }
 
-
 /* =========================================
    PROFILE RINGS
-   CLEAR SEPARATE ROTATING LINES
 ========================================= */
 
 .profile-ring {
@@ -498,10 +493,8 @@ body.light-mode {
   z-index: 6;
 }
 
-
 /* =========================================
    FIRST MOVING RING
-   CYAN
 ========================================= */
 
 .ring-one {
@@ -513,10 +506,6 @@ body.light-mode {
   border-top-color: var(--hero-cyan);
   border-right-color: var(--hero-cyan);
 
-  /*
-     بسیار کم Shadow
-     تا خط کاملاً جدا دیده شود
-  */
   box-shadow:
     0 0 3px rgba(0, 234, 255, 0.35);
 
@@ -524,10 +513,8 @@ body.light-mode {
     ringRotate 4s linear infinite;
 }
 
-
 /* =========================================
    SECOND MOVING RING
-   PURPLE
 ========================================= */
 
 .ring-two {
@@ -539,16 +526,12 @@ body.light-mode {
   border-bottom-color: #a970ff;
   border-left-color: #a970ff;
 
-  /*
-     بسیار کم Shadow
-  */
   box-shadow:
-    0 0 3px rgba(169, 112, 255, 0.30);
+    0 0 3px rgba(169, 112, 255, 0.3);
 
   animation:
     ringRotateReverse 6s linear infinite;
 }
-
 
 /* =========================================
    RING ROTATION
@@ -573,7 +556,6 @@ body.light-mode {
     transform: rotate(0deg);
   }
 }
-
 
 /* =========================================
    LAPTOP
@@ -603,7 +585,6 @@ body.light-mode {
 
   opacity: 0.95;
 }
-
 
 /* =========================================
    LAPTOP SCREEN
@@ -663,7 +644,6 @@ body.light-mode {
   }
 }
 
-
 /* =========================================
    SCREEN GLASS
 ========================================= */
@@ -672,6 +652,7 @@ body.light-mode {
   content: "";
 
   position: absolute;
+
   inset: 0;
 
   background:
@@ -684,7 +665,6 @@ body.light-mode {
   pointer-events: none;
 }
 
-
 /* =========================================
    SCREEN TOP
 ========================================= */
@@ -696,6 +676,7 @@ body.light-mode {
   align-items: center;
 
   gap: 6px;
+
   padding: 0 10px;
 
   border-bottom:
@@ -729,7 +710,6 @@ body.light-mode {
   margin-left: 10px;
 }
 
-
 /* =========================================
    CODE ON LAPTOP
 ========================================= */
@@ -744,6 +724,7 @@ body.light-mode {
     monospace;
 
   font-size: 11px;
+
   line-height: 1.75;
 
   color: var(--hero-code);
@@ -753,6 +734,8 @@ body.light-mode {
 
   transition:
     color 0.4s ease;
+
+  white-space: nowrap;
 }
 
 .code-purple {
@@ -819,7 +802,6 @@ body.light-mode {
   }
 }
 
-
 /* =========================================
    LAPTOP BASE
 ========================================= */
@@ -875,8 +857,7 @@ body.light-mode {
 
   left: 50%;
 
-  transform:
-    translateX(-50%);
+  transform: translateX(-50%);
 
   bottom: 3px;
 
@@ -884,7 +865,6 @@ body.light-mode {
 
   background: #151b26;
 }
-
 
 /* =========================================
    FLOATING CODE
@@ -898,6 +878,7 @@ body.light-mode {
   color: var(--hero-cyan);
 
   font-family: monospace;
+
   font-size: 20px;
   font-weight: bold;
 
@@ -908,6 +889,8 @@ body.light-mode {
 
   animation:
     codeFloat 5s ease-in-out infinite;
+
+  pointer-events: none;
 }
 
 .code-one {
@@ -952,7 +935,6 @@ body.light-mode {
   }
 }
 
-
 /* =========================================
    STARS
 ========================================= */
@@ -968,7 +950,6 @@ body.light-mode {
 
   pointer-events: none;
 }
-
 
 /* Main stars */
 
@@ -1006,7 +987,6 @@ body.light-mode {
     box-shadow 0.4s ease;
 }
 
-
 /* Bigger stars */
 
 .star:nth-child(3n) {
@@ -1021,7 +1001,6 @@ body.light-mode {
     0 0 30px var(--hero-star-glow);
 }
 
-
 /* Extra bright stars */
 
 .star:nth-child(5n) {
@@ -1035,7 +1014,6 @@ body.light-mode {
     0 0 22px var(--hero-star-glow),
     0 0 35px var(--hero-star-glow);
 }
-
 
 /* =========================================
    STAR ANIMATION
@@ -1071,22 +1049,51 @@ body.light-mode {
   }
 }
 
+/* =========================================
+   RESPONSIVE - LARGE TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+  .hero-container {
+    width: min(1100px, 94%);
+    gap: 10px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(42px, 6vw, 68px);
+  }
+
+  .hero-visual {
+    transform: scale(0.9);
+  }
+}
 
 /* =========================================
    RESPONSIVE - TABLET
 ========================================= */
 
 @media (max-width: 1000px) {
+  .hero {
+    min-height: auto;
+  }
 
   .hero-container {
     grid-template-columns: 1fr;
 
-    padding-top: 100px;
+    width: min(850px, 94%);
+
+    padding-top: 110px;
     padding-bottom: 80px;
+
+    gap: 20px;
   }
 
   .hero-content {
     text-align: center;
+  }
+
+  .hero-small-title {
+    font-size: 13px;
   }
 
   .hero-description {
@@ -1102,46 +1109,159 @@ body.light-mode {
 
   .hero-visual {
     height: 600px;
+
+    transform: scale(0.9);
+  }
+
+  .hero-glow {
+    width: 420px;
+    height: 420px;
   }
 }
 
+/* =========================================
+   RESPONSIVE - SMALL TABLET
+========================================= */
+
+@media (max-width: 768px) {
+  .hero-container {
+    padding-top: 100px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(40px, 10vw, 58px);
+  }
+
+  .hero-content h2 {
+    font-size: 25px;
+  }
+
+  .hero-description {
+    max-width: 650px;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .hero-visual {
+    height: 530px;
+    transform: scale(0.82);
+  }
+
+  .hero-glow {
+    width: 380px;
+    height: 380px;
+  }
+
+  .floating-code {
+    font-size: 17px;
+  }
+}
 
 /* =========================================
    RESPONSIVE - MOBILE
 ========================================= */
 
 @media (max-width: 600px) {
+  .hero {
+    min-height: 100vh;
+
+    background:
+      radial-gradient(
+        circle at 50% 60%,
+        var(--hero-cyan-soft),
+        transparent 30%
+      ),
+      var(--hero-bg);
+  }
 
   .hero-container {
     width: 94%;
+
+    padding-top: 90px;
+    padding-bottom: 50px;
+
+    gap: 5px;
+  }
+
+  .hero-small-title {
+    margin-bottom: 10px;
+
+    font-size: 11px;
+    letter-spacing: 2.5px;
   }
 
   .hero-content h1 {
-    font-size: 48px;
+    font-size: clamp(38px, 12vw, 50px);
+    line-height: 1.08;
   }
 
   .hero-content h2 {
-    font-size: 22px;
+    margin: 14px 0 12px;
+
+    font-size: 21px;
   }
 
   .hero-description {
     font-size: 14px;
+    line-height: 1.7;
+
+    margin-bottom: 22px;
+  }
+
+  .hero-buttons {
+    gap: 10px;
+  }
+
+  .hero-btn {
+    padding: 11px 19px;
+
+    font-size: 13px;
+  }
+
+  .hero-socials {
+    gap: 9px;
+
+    margin-top: 20px;
+  }
+
+  .hero-socials a {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 7px;
+  }
+
+  .hero-socials a i {
+    font-size: 16px;
+  }
+
+  .tech-mini {
+    gap: 7px;
+
+    margin-top: 20px;
+  }
+
+  .tech-mini span {
+    padding: 6px 10px;
+
+    font-size: 10px;
   }
 
   .hero-visual {
-    height: 480px;
+    height: 470px;
+
+    transform: scale(0.75);
   }
 
-
-  /* Neon circle */
+  .hero-glow {
+    width: 340px;
+    height: 340px;
+  }
 
   .neon-circle {
     width: 290px;
     height: 290px;
   }
-
-
-  /* Profile */
 
   .profile-wrapper {
     width: 220px;
@@ -1163,11 +1283,9 @@ body.light-mode {
     height: 270px;
   }
 
-
-  /* Laptop */
-
   .laptop {
     width: 310px;
+
     top: 55%;
   }
 
@@ -1176,22 +1294,163 @@ body.light-mode {
   }
 
   .code {
+    padding: 10px 12px;
+
     font-size: 7px;
     line-height: 1.55;
   }
 
+  .screen-top {
+    height: 25px;
 
-  /* Social icons */
+    font-size: 8px;
+  }
 
-  .hero-socials {
-    gap: 10px;
-    margin-top: 20px;
+  .dot {
+    width: 5px;
+    height: 5px;
+  }
+
+  .laptop-base {
+    height: 22px;
+  }
+
+  .keyboard {
+    top: 4px;
+    height: 6px;
+  }
+
+  .trackpad {
+    width: 60px;
+    height: 7px;
+  }
+
+  .floating-code {
+    font-size: 15px;
+  }
+
+  .code-one {
+    left: 10px;
+    top: 150px;
+  }
+
+  .code-two {
+    right: 10px;
+    bottom: 180px;
+  }
+
+  .code-three {
+    left: 30px;
+    bottom: 110px;
+  }
+}
+
+/* =========================================
+   RESPONSIVE - VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+  .hero-container {
+    width: 92%;
+
+    padding-top: 80px;
+  }
+
+  .hero-content h1 {
+    font-size: 35px;
+  }
+
+  .hero-content h2 {
+    font-size: 19px;
+  }
+
+  .hero-description {
+    font-size: 13px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+
+    width: 100%;
+  }
+
+  .hero-btn {
+    width: 100%;
+    max-width: 240px;
+  }
+
+  .hero-visual {
+    height: 420px;
+
+    transform: scale(0.65);
+  }
+
+  .tech-mini {
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .tech-mini span {
+    font-size: 9px;
+  }
+}
+
+/* =========================================
+   RESPONSIVE - EXTRA SMALL
+========================================= */
+
+@media (max-width: 320px) {
+  .hero-container {
+    width: 94%;
+  }
+
+  .hero-content h1 {
+    font-size: 31px;
+  }
+
+  .hero-content h2 {
+    font-size: 17px;
+  }
+
+  .hero-description {
+    font-size: 12px;
+  }
+
+  .hero-visual {
+    height: 390px;
+
+    transform: scale(0.58);
   }
 
   .hero-socials a {
-    width: 40px;
-    height: 40px;
-
-    font-size: 16px;
+    width: 38px;
+    height: 38px;
   }
 }
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+.hero-btn:focus-visible,
+.hero-socials a:focus-visible {
+  outline: 2px solid var(--hero-cyan);
+  outline-offset: 4px;
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero *,
+  .hero *::before,
+  .hero *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+

@@ -1,3 +1,4 @@
+
 import "./Hero.css";
 import "./HeroResponsive.css";
 
@@ -46,14 +47,14 @@ function Hero() {
             modern technologies.
           </p>
 
-          {/* Buttons */}
+          {/* BUTTONS */}
           <div className="hero-buttons">
 
             <a
               href="#projects"
               className="hero-btn primary"
             >
-              View My project
+              View My Projects
             </a>
 
             <a
@@ -65,13 +66,13 @@ function Hero() {
 
           </div>
 
-          {/* Social Icons - BELOW BUTTONS */}
+          {/* SOCIAL ICONS */}
           <div className="hero-socials">
 
             <a
               href="https://github.com/asgharmohammady313"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               aria-label="GitHub"
             >
               <i className="fa-brands fa-github"></i>
@@ -80,16 +81,16 @@ function Hero() {
             <a
               href="https://www.facebook.com/profile.php?id=100083561838511"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               aria-label="Facebook"
             >
               <i className="fa-brands fa-facebook"></i>
             </a>
 
             <a
-              href="https://linkedin.com/"
+              href="https://www.linkedin.com/"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               aria-label="LinkedIn"
             >
               <i className="fa-brands fa-linkedin-in"></i>
@@ -121,7 +122,7 @@ function Hero() {
 
             <div className="profile-ring ring-one"></div>
 
-            {/* <div className="profile-ring ring-two"></div> */}
+            <div className="profile-ring ring-two"></div>
 
             <div className="profile-image">
               <img
@@ -152,3 +153,4 @@ function Hero() {
 }
 
 export default Hero;
+

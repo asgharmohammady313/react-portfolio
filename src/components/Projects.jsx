@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+
 import {
   ArrowLeft,
   ArrowRight,
@@ -55,12 +56,14 @@ function Projects() {
     projects.length / projectsPerPage
   );
 
+  // NEXT PROJECTS
   const nextProjects = () => {
     setCurrentPage((prev) =>
       prev < totalPages - 1 ? prev + 1 : 0
     );
   };
 
+  // PREVIOUS PROJECTS
   const previousProjects = () => {
     setCurrentPage((prev) =>
       prev > 0 ? prev - 1 : totalPages - 1
@@ -76,7 +79,6 @@ function Projects() {
 
   return (
     <section id="projects" className="projects section">
-
       <div className="section-container">
 
         {/* HEADER */}
@@ -95,6 +97,7 @@ function Projects() {
               className="project-nav-button"
               onClick={previousProjects}
               aria-label="Previous projects"
+              title="Previous projects"
             >
               <ArrowLeft size={22} />
             </button>
@@ -104,21 +107,19 @@ function Projects() {
               className="project-nav-button"
               onClick={nextProjects}
               aria-label="Next projects"
+              title="Next projects"
             >
               <ArrowRight size={22} />
             </button>
 
           </div>
-
         </div>
 
         {/* PROJECTS */}
         <div className="projects-slider">
-
           <div className="projects-track">
 
             {visibleProjects.map((project) => (
-
               <article
                 className="project-card"
                 key={project.title}
@@ -130,12 +131,14 @@ function Projects() {
                   <img
                     src={project.image}
                     alt={project.title}
+                    loading="lazy"
                   />
 
                   <a
                     href="#contact"
                     className="project-external"
-                    aria-label={`View ${project.title}`}
+                    aria-label={`Contact me about ${project.title}`}
+                    title={`Contact me about ${project.title}`}
                   >
                     <ExternalLink size={17} />
                   </a>
@@ -151,6 +154,7 @@ function Projects() {
                     {project.description}
                   </p>
 
+                  {/* TAGS */}
                   <div className="project-tags">
 
                     {project.tags.map((tag) => (
@@ -162,13 +166,10 @@ function Projects() {
                   </div>
 
                 </div>
-
               </article>
-
             ))}
 
           </div>
-
         </div>
 
         {/* DOTS */}
@@ -176,7 +177,6 @@ function Projects() {
 
           {Array.from({ length: totalPages }).map(
             (_, index) => (
-
               <button
                 type="button"
                 key={index}
@@ -187,17 +187,21 @@ function Projects() {
                 }
                 onClick={() => setCurrentPage(index)}
                 aria-label={`Go to project group ${index + 1}`}
+                aria-current={
+                  currentPage === index
+                    ? "true"
+                    : undefined
+                }
               />
-
             )
           )}
 
         </div>
 
       </div>
-
     </section>
   );
 }
 
 export default Projects;
+

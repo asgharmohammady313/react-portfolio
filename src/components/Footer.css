@@ -5,26 +5,44 @@
 
 .footer {
   width: 100%;
+
   border-top: 1px solid rgba(91, 135, 180, 0.2);
+
   background: #040f19;
 }
+
+/* =================================
+   FOOTER CONTAINER
+================================= */
 
 .footer-container {
   width: 90%;
   max-width: 1050px;
+
   min-height: 80px;
+
   margin: 0 auto;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   gap: 20px;
+
+  box-sizing: border-box;
 }
+
+/* =================================
+   FOOTER TEXT
+================================= */
 
 .footer-container p {
   margin: 0;
+
   color: #718096;
+
   font-size: 11px;
+  line-height: 1.6;
 }
 
 /* =================================
@@ -38,6 +56,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  flex-shrink: 0;
 
   border: 1px solid #28445f;
   border-radius: 50%;
@@ -56,13 +76,134 @@
 
 .back-to-top:hover {
   transform: translateY(-4px);
+
   background: #2563eb;
   border-color: #2563eb;
-  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+
+  box-shadow:
+    0 8px 20px rgba(37, 99, 235, 0.35);
 }
 
 .back-to-top:active {
   transform: translateY(-1px);
+}
+
+.back-to-top svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 900px) {
+
+  .footer-container {
+    width: calc(100% - 60px);
+
+    min-height: 75px;
+
+    gap: 18px;
+  }
+
+  .footer-container p {
+    font-size: 10px;
+  }
+
+  .back-to-top {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+
+  .footer-container {
+    width: calc(100% - 30px);
+
+    min-height: 70px;
+
+    gap: 15px;
+  }
+
+  .footer-container p {
+    font-size: 9px;
+
+    line-height: 1.5;
+  }
+
+  .back-to-top {
+    width: 38px;
+    height: 38px;
+  }
+
+  .back-to-top svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* =================================
+   SMALL MOBILE
+================================= */
+
+@media (max-width: 400px) {
+
+  .footer-container {
+    width: calc(100% - 24px);
+
+    min-height: 65px;
+
+    gap: 10px;
+  }
+
+  .footer-container p {
+    font-size: 8px;
+  }
+
+  .back-to-top {
+    width: 35px;
+    height: 35px;
+  }
+
+  .back-to-top svg {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+/* =================================
+   VERY SMALL SCREENS
+================================= */
+
+@media (max-width: 320px) {
+
+  .footer-container {
+    width: calc(100% - 20px);
+
+    min-height: 60px;
+
+    gap: 8px;
+  }
+
+  .footer-container p {
+    font-size: 7.5px;
+  }
+
+  .back-to-top {
+    width: 32px;
+    height: 32px;
+  }
+
+  .back-to-top svg {
+    width: 14px;
+    height: 14px;
+  }
 }
 
 /* =================================
@@ -71,6 +212,7 @@
 
 body.light-mode .footer {
   background: #ffffff;
+
   border-top-color: #e5e7eb;
 }
 
@@ -80,31 +222,44 @@ body.light-mode .footer-container p {
 
 body.light-mode .back-to-top {
   color: #111827;
+
   background: #ffffff;
+
   border-color: #d1d5db;
 }
 
 body.light-mode .back-to-top:hover {
   color: #ffffff;
+
   background: #2563eb;
+
   border-color: #2563eb;
 }
 
 /* =================================
-   MOBILE
+   ACCESSIBILITY
 ================================= */
 
-@media (max-width: 600px) {
-  .footer-container {
-    min-height: 70px;
-  }
+.back-to-top:focus-visible {
+  outline: 2px solid #8d49ff;
+  outline-offset: 3px;
+}
 
-  .footer-container p {
-    font-size: 10px;
-  }
+/* =================================
+   REDUCE MOTION
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
 
   .back-to-top {
-    width: 38px;
-    height: 38px;
+    transition: none;
+  }
+
+  .back-to-top:hover {
+    transform: none;
+  }
+
+  .back-to-top:active {
+    transform: none;
   }
 }

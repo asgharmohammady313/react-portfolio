@@ -1,68 +1,233 @@
+
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+/* =========================================
+   ROOT / GLOBAL VARIABLES
+========================================= */
 
 :root {
   font-family: "Inter", Arial, sans-serif;
 
   color: #eef2ff;
-
   background: #020a13;
 
   font-synthesis: none;
-
   text-rendering: optimizeLegibility;
 
   --background: #020a13;
   --card: #071625;
+
   --purple: #a344ff;
   --blue: #315dff;
   --cyan: #15cfff;
+
   --text: #eef2ff;
   --muted: #aebbd0;
+
+  --border: rgba(91, 135, 180, 0.2);
 }
 
-* {
+/* =========================================
+   BOX SIZING
+========================================= */
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
+/* =========================================
+   HTML
+========================================= */
+
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
+
+/* =========================================
+   BODY
+========================================= */
 
 body {
   margin: 0;
-
   min-width: 320px;
+  min-height: 100vh;
 
   background: var(--background);
-
   color: var(--text);
+
+  font-family: "Inter", Arial, sans-serif;
+
+  overflow-x: hidden;
+
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease;
 }
+
+/* =========================================
+   FORM ELEMENTS
+========================================= */
 
 body,
 button,
 input,
-textarea {
+textarea,
+select {
   font-family: "Inter", Arial, sans-serif;
-}
-
-a {
-  color: inherit;
-
-  text-decoration: none;
 }
 
 button,
 input,
-textarea {
+textarea,
+select {
   font: inherit;
 }
 
+/* =========================================
+   LINKS
+========================================= */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* =========================================
+   IMAGES
+========================================= */
+
 img {
   display: block;
-
   max-width: 100%;
+  height: auto;
 }
+
+/* =========================================
+   BUTTON
+========================================= */
+
+button {
+  border: 0;
+  cursor: pointer;
+}
+
+/* =========================================
+   MAIN
+========================================= */
 
 main {
   width: 100%;
+  min-width: 0;
 }
+
+/* =========================================
+   SECTIONS
+========================================= */
+
+section {
+  width: 100%;
+  min-width: 0;
+}
+
+/* =========================================
+   GLOBAL CONTAINER
+========================================= */
+
+.section-container {
+  width: min(1200px, 92%);
+  margin: 0 auto;
+}
+
+/* =========================================
+   TEXT SAFETY
+========================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  overflow-wrap: anywhere;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+  .section-container {
+    width: 90%;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+  .section-container {
+    width: 92%;
+  }
+}
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+  .section-container {
+    width: 94%;
+  }
+}
+
+/* =========================================
+   LIGHT MODE BASE
+========================================= */
+
+body.light-mode {
+  --background: #f4f7fb;
+  --card: #ffffff;
+
+  --text: #111827;
+  --muted: #6b7280;
+
+  background: var(--background);
+  color: var(--text);
+}
+
+/* =========================================
+   FOCUS ACCESSIBILITY
+========================================= */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+

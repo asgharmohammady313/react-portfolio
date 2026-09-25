@@ -1,14 +1,19 @@
 
 import "./Skills.css";
 
-/* ================================
+/* =================================
    REACT ICON
-================================ */
+================================= */
 
 function ReactIcon() {
   return (
     <svg viewBox="0 0 24 24" width="36" height="36">
-      <circle cx="12" cy="12" r="2.2" fill="currentColor" />
+      <circle
+        cx="12"
+        cy="12"
+        r="2.2"
+        fill="currentColor"
+      />
 
       <ellipse
         cx="12"
@@ -45,9 +50,9 @@ function ReactIcon() {
   );
 }
 
-/* ================================
+/* =================================
    JAVASCRIPT ICON
-================================ */
+================================= */
 
 function JavaScriptIcon() {
   return (
@@ -75,9 +80,9 @@ function JavaScriptIcon() {
   );
 }
 
-/* ================================
+/* =================================
    TAILWIND CSS ICON
-================================ */
+================================= */
 
 function TailwindIcon() {
   return (
@@ -90,9 +95,9 @@ function TailwindIcon() {
   );
 }
 
-/* ================================
+/* =================================
    HTML5 ICON
-================================ */
+================================= */
 
 function HtmlIcon() {
   return (
@@ -105,9 +110,9 @@ function HtmlIcon() {
   );
 }
 
-/* ================================
+/* =================================
    CSS3 ICON
-================================ */
+================================= */
 
 function CssIcon() {
   return (
@@ -120,9 +125,9 @@ function CssIcon() {
   );
 }
 
-/* ================================
+/* =================================
    PHP ICON
-================================ */
+================================= */
 
 function PhpIcon() {
   return (
@@ -152,9 +157,9 @@ function PhpIcon() {
   );
 }
 
-/* ================================
+/* =================================
    LARAVEL ICON
-================================ */
+================================= */
 
 function LaravelIcon() {
   return (
@@ -167,9 +172,9 @@ function LaravelIcon() {
   );
 }
 
-/* ================================
+/* =================================
    GITHUB ICON
-================================ */
+================================= */
 
 function GitHubIcon() {
   return (
@@ -182,9 +187,9 @@ function GitHubIcon() {
   );
 }
 
-/* ================================
+/* =================================
    SKILLS DATA
-================================ */
+================================= */
 
 const skills = [
   {
@@ -229,38 +234,33 @@ const skills = [
   },
 ];
 
-/* ================================
+/* =================================
    SKILLS COMPONENT
-================================ */
+================================= */
 
 function Skills() {
   return (
     <section id="skills" className="skills section">
       <div className="section-container">
 
+        {/* SECTION TITLE */}
         <div className="section-title">
           <p>My Skills</p>
-
-          <h2>
-            Technologies I Work With
-          </h2>
+          <h2>Technologies I Work With</h2>
         </div>
 
+        {/* SKILLS GRID */}
         <div className="skills-grid">
-
           {skills.map((skill) => (
             <div
               className="skill-card"
               key={skill.name}
             >
-
               <div className="skill-icon">
                 {skill.icon}
               </div>
 
-              <h3>
-                {skill.name}
-              </h3>
+              <h3>{skill.name}</h3>
 
               <div className="skill-percent">
                 {skill.percentage}%
@@ -273,14 +273,14 @@ function Skills() {
                   }}
                 ></span>
               </div>
-
             </div>
           ))}
-
         </div>
+
       </div>
     </section>
   );
 }
 
 export default Skills;
+

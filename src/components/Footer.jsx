@@ -13,11 +13,11 @@ function Footer() {
 
   return (
     <footer className="footer">
-
       <div className="footer-container">
 
         <p>
-          © {new Date().getFullYear()} Asghar Mohammadi. All rights reserved.
+          © {new Date().getFullYear()} Asghar Mohammadi.
+          All rights reserved.
         </p>
 
         <button
@@ -31,9 +31,9 @@ function Footer() {
         </button>
 
       </div>
-
     </footer>
   );
 }
 
 export default Footer;
+
