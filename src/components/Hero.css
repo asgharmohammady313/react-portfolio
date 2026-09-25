@@ -19,7 +19,6 @@
   --hero-code: #d7e4ff;
 }
 
-
 /* =========================================
    LIGHT MODE
 ========================================= */
@@ -40,7 +39,6 @@ body.light-mode {
   --hero-code: #26364f;
 }
 
-
 /* =========================================
    HERO
 ========================================= */
@@ -50,7 +48,6 @@ body.light-mode {
   min-height: 100vh;
   width: 100%;
   overflow: hidden;
-
   display: flex;
   align-items: center;
 
@@ -74,7 +71,6 @@ body.light-mode {
     color 0.4s ease;
 }
 
-
 /* =========================================
    HERO CONTAINER
 ========================================= */
@@ -87,6 +83,7 @@ body.light-mode {
   margin: auto;
 
   display: grid;
+
   grid-template-columns:
     minmax(0, 1fr)
     minmax(0, 1fr);
@@ -94,7 +91,6 @@ body.light-mode {
   align-items: center;
   gap: 30px;
 }
-
 
 /* =========================================
    LEFT CONTENT
@@ -162,7 +158,6 @@ body.light-mode {
   margin-bottom: 30px;
 }
 
-
 /* =========================================
    BUTTONS
 ========================================= */
@@ -192,14 +187,12 @@ body.light-mode {
   transition: all 0.3s ease;
 }
 
-
 /* =========================================
    PRIMARY BUTTON
 ========================================= */
 
 .hero-btn.primary {
   color: #001018;
-
   background: var(--hero-cyan);
 
   box-shadow:
@@ -214,7 +207,6 @@ body.light-mode {
     0 0 20px var(--hero-cyan),
     0 0 40px var(--hero-cyan-glow);
 }
-
 
 /* =========================================
    SECONDARY BUTTON
@@ -245,7 +237,6 @@ body.light-mode {
     0 0 30px var(--hero-cyan-soft);
 }
 
-
 /* =========================================
    SOCIAL ICONS
 ========================================= */
@@ -273,7 +264,6 @@ body.light-mode {
   border-radius: 8px;
 
   color: var(--hero-cyan);
-
   background: var(--hero-card);
 
   text-decoration: none;
@@ -306,7 +296,6 @@ body.light-mode {
   color: #ffffff;
 }
 
-
 /* =========================================
    MINI TECHNOLOGIES
 ========================================= */
@@ -315,6 +304,7 @@ body.light-mode {
   display: flex;
 
   gap: 12px;
+
   flex-wrap: wrap;
 
   margin-top: 25px;
@@ -334,7 +324,6 @@ body.light-mode {
   font-size: 12px;
 }
 
-
 /* =========================================
    HERO VISUAL
 ========================================= */
@@ -352,7 +341,6 @@ body.light-mode {
 
   isolation: isolate;
 }
-
 
 /* =========================================
    BACKGROUND GLOW
@@ -396,7 +384,6 @@ body.light-mode {
   }
 }
 
-
 /* =========================================
    NEON CIRCLE
 ========================================= */
@@ -418,8 +405,7 @@ body.light-mode {
     inset 0 0 20px var(--hero-cyan),
     inset 0 0 50px var(--hero-cyan-soft);
 
-  animation:
-    circleRotate 12s linear infinite;
+  animation: circleRotate 12s linear infinite;
 
   transition:
     border-color 0.4s ease,
@@ -451,7 +437,6 @@ body.light-mode {
     transform: rotate(360deg);
   }
 }
-
 
 /* =========================================
    LAPTOP
@@ -485,7 +470,6 @@ body.light-mode {
   pointer-events: none;
 }
 
-
 /* =========================================
    LAPTOP SCREEN
 ========================================= */
@@ -518,8 +502,7 @@ body.light-mode {
 
   overflow: hidden;
 
-  animation:
-    laptopGlow 4s ease-in-out infinite;
+  animation: laptopGlow 4s ease-in-out infinite;
 
   transition:
     background 0.4s ease,
@@ -560,7 +543,6 @@ body.light-mode {
       inset 0 0 40px var(--hero-cyan-soft);
   }
 }
-
 
 /* =========================================
    SCREEN TOP
@@ -607,7 +589,6 @@ body.light-mode {
   margin-left: 10px;
 }
 
-
 /* =========================================
    CODE ON LAPTOP
 ========================================= */
@@ -622,6 +603,7 @@ body.light-mode {
     monospace;
 
   font-size: 11px;
+
   line-height: 1.75;
 
   color: var(--hero-code);
@@ -669,7 +651,6 @@ body.light-mode {
     0 0 12px var(--hero-cyan-soft);
 }
 
-
 /* =========================================
    SCREEN GLOW
 ========================================= */
@@ -703,7 +684,6 @@ body.light-mode {
     opacity: 0.3;
   }
 }
-
 
 /* =========================================
    LAPTOP BASE
@@ -769,7 +749,6 @@ body.light-mode {
   background: #151b26;
 }
 
-
 /* =========================================
    PROFILE WRAPPER
    PHOTO IS ALWAYS IN FRONT
@@ -784,12 +763,12 @@ body.light-mode {
   height: 300px;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
   isolation: isolate;
 }
-
 
 /* =========================================
    PROFILE IMAGE
@@ -839,7 +818,6 @@ body.light-mode {
   z-index: 50;
 }
 
-
 /* =========================================
    PROFILE RINGS
 ========================================= */
@@ -853,7 +831,6 @@ body.light-mode {
 
   z-index: 25;
 }
-
 
 /* =========================================
    FIRST MOVING RING
@@ -881,7 +858,6 @@ body.light-mode {
   z-index: 25;
 }
 
-
 /* =========================================
    SECOND MOVING RING
 ========================================= */
@@ -908,7 +884,6 @@ body.light-mode {
   z-index: 24;
 }
 
-
 /* =========================================
    RING ROTATION
 ========================================= */
@@ -933,7 +908,6 @@ body.light-mode {
   }
 }
 
-
 /* =========================================
    FLOATING CODE
 ========================================= */
@@ -948,6 +922,7 @@ body.light-mode {
   font-family: monospace;
 
   font-size: 20px;
+
   font-weight: bold;
 
   opacity: 0.75;
@@ -1003,7 +978,6 @@ body.light-mode {
   }
 }
 
-
 /* =========================================
    STARS
 ========================================= */
@@ -1055,7 +1029,6 @@ body.light-mode {
     box-shadow 0.4s ease;
 }
 
-
 /* Bigger stars */
 
 .star:nth-child(3n) {
@@ -1070,7 +1043,6 @@ body.light-mode {
     0 0 30px var(--hero-star-glow);
 }
 
-
 /* Extra bright stars */
 
 .star:nth-child(5n) {
@@ -1084,7 +1056,6 @@ body.light-mode {
     0 0 22px var(--hero-star-glow),
     0 0 35px var(--hero-star-glow);
 }
-
 
 /* =========================================
    STAR ANIMATION
@@ -1120,7 +1091,6 @@ body.light-mode {
   }
 }
 
-
 /* =========================================
    RESPONSIVE - LARGE TABLET
 ========================================= */
@@ -1128,7 +1098,6 @@ body.light-mode {
 @media (max-width: 1100px) {
   .hero-container {
     width: min(1100px, 94%);
-
     gap: 10px;
   }
 
@@ -1141,7 +1110,6 @@ body.light-mode {
     transform: scale(0.9);
   }
 }
-
 
 /* =========================================
    RESPONSIVE - TABLET
@@ -1161,27 +1129,24 @@ body.light-mode {
 
     gap: 5px;
 
-    /*
-      مهم:
-      در تبلت و موبایل عکس بالا
-      و متن پایین قرار می‌گیرد.
-    */
+    /* عکس بالا و متن پایین */
     display: flex;
     flex-direction: column;
   }
 
   /* عکس / لپ‌تاپ اول */
+
   .hero-visual {
     order: 1;
 
     width: 100%;
-
     height: 600px;
 
     transform: scale(0.9);
   }
 
   /* نوشته‌ها دوم */
+
   .hero-content {
     order: 2;
 
@@ -1210,7 +1175,6 @@ body.light-mode {
     height: 420px;
   }
 }
-
 
 /* =========================================
    RESPONSIVE - SMALL TABLET
@@ -1265,7 +1229,6 @@ body.light-mode {
   }
 }
 
-
 /* =========================================
    RESPONSIVE - MOBILE
    PHOTO FIRST / LAPTOP BEHIND
@@ -1284,7 +1247,6 @@ body.light-mode {
       var(--hero-bg);
   }
 
-
   /* =====================================
      MAIN ORDER
   ===================================== */
@@ -1301,9 +1263,10 @@ body.light-mode {
     flex-direction: column;
   }
 
-  /*
-    PHOTO FIRST
-  */
+  /* =====================================
+     PHOTO FIRST
+  ===================================== */
+
   .hero-visual {
     order: 1;
 
@@ -1318,9 +1281,10 @@ body.light-mode {
     overflow: visible;
   }
 
-  /*
-    TEXT SECOND
-  */
+  /* =====================================
+     TEXT SECOND
+  ===================================== */
+
   .hero-content {
     order: 2;
 
@@ -1328,7 +1292,6 @@ body.light-mode {
 
     text-align: center;
   }
-
 
   /* =====================================
      TEXT
@@ -1363,7 +1326,6 @@ body.light-mode {
     margin-bottom: 22px;
   }
 
-
   /* =====================================
      BUTTONS
   ===================================== */
@@ -1379,7 +1341,6 @@ body.light-mode {
 
     font-size: 13px;
   }
-
 
   /* =====================================
      SOCIALS
@@ -1404,7 +1365,6 @@ body.light-mode {
     font-size: 16px;
   }
 
-
   /* =====================================
      TECHNOLOGIES
   ===================================== */
@@ -1423,7 +1383,6 @@ body.light-mode {
     font-size: 10px;
   }
 
-
   /* =====================================
      BACKGROUND GLOW
   ===================================== */
@@ -1435,7 +1394,6 @@ body.light-mode {
     z-index: 1;
   }
 
-
   /* =====================================
      NEON CIRCLE
   ===================================== */
@@ -1446,7 +1404,6 @@ body.light-mode {
 
     z-index: 2;
   }
-
 
   /* =====================================
      LAPTOP BEHIND PHOTO
@@ -1466,7 +1423,6 @@ body.light-mode {
 
     z-index: 3;
   }
-
 
   /* =====================================
      PROFILE IN FRONT
@@ -1508,7 +1464,6 @@ body.light-mode {
     z-index: 50;
   }
 
-
   /* =====================================
      RINGS AROUND PHOTO
   ===================================== */
@@ -1530,7 +1485,6 @@ body.light-mode {
 
     z-index: 34;
   }
-
 
   /* =====================================
      LAPTOP CODE
@@ -1574,7 +1528,6 @@ body.light-mode {
     height: 7px;
   }
 
-
   /* =====================================
      FLOATING CODE
   ===================================== */
@@ -1600,7 +1553,6 @@ body.light-mode {
     bottom: 110px;
   }
 }
-
 
 /* =========================================
    VERY SMALL MOBILE
@@ -1660,7 +1612,6 @@ body.light-mode {
     font-size: 9px;
   }
 
-
   /* =====================================
      PHOTO STILL IN FRONT
   ===================================== */
@@ -1699,7 +1650,6 @@ body.light-mode {
     z-index: 34;
   }
 
-
   /* Laptop remains behind */
 
   .laptop {
@@ -1710,7 +1660,6 @@ body.light-mode {
     z-index: 3;
   }
 }
-
 
 /* =========================================
    EXTRA SMALL MOBILE
@@ -1749,7 +1698,6 @@ body.light-mode {
     width: 38px;
     height: 38px;
   }
-
 
   /* =====================================
      PHOTO ALWAYS FRONT
@@ -1798,7 +1746,6 @@ body.light-mode {
   }
 }
 
-
 /* =========================================
    ACCESSIBILITY
 ========================================= */
@@ -1810,7 +1757,6 @@ body.light-mode {
 
   outline-offset: 4px;
 }
-
 
 /* =========================================
    REDUCED MOTION

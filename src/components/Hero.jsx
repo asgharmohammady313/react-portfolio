@@ -1,6 +1,6 @@
 
 import "./Hero.css";
-import "./HeroResponsive.css";
+
 
 function Hero() {
   // 140 animated stars

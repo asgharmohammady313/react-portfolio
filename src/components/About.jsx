@@ -6,7 +6,7 @@ import {
 } from "lucide-react";
 
 import "./About.css";
-import "./AboutResponsive.css";
+
 
 function About() {
   return (
