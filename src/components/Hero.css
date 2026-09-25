@@ -19,6 +19,7 @@
   --hero-code: #d7e4ff;
 }
 
+
 /* =========================================
    LIGHT MODE
 ========================================= */
@@ -38,6 +39,7 @@ body.light-mode {
   --hero-laptop-light: #1b2938;
   --hero-code: #26364f;
 }
+
 
 /* =========================================
    HERO
@@ -72,6 +74,7 @@ body.light-mode {
     color 0.4s ease;
 }
 
+
 /* =========================================
    HERO CONTAINER
 ========================================= */
@@ -84,11 +87,14 @@ body.light-mode {
   margin: auto;
 
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr);
 
   align-items: center;
   gap: 30px;
 }
+
 
 /* =========================================
    LEFT CONTENT
@@ -96,7 +102,7 @@ body.light-mode {
 
 .hero-content {
   position: relative;
-  z-index: 20;
+  z-index: 50;
   min-width: 0;
 }
 
@@ -123,12 +129,13 @@ body.light-mode {
 .hero-content h1 span {
   display: block;
 
-  background: linear-gradient(
-    90deg,
-    var(--hero-cyan),
-    #8b5cf6,
-    #ff2bd6
-  );
+  background:
+    linear-gradient(
+      90deg,
+      var(--hero-cyan),
+      #8b5cf6,
+      #ff2bd6
+    );
 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -155,6 +162,7 @@ body.light-mode {
   margin-bottom: 30px;
 }
 
+
 /* =========================================
    BUTTONS
 ========================================= */
@@ -171,6 +179,7 @@ body.light-mode {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
   gap: 8px;
 
   padding: 13px 25px;
@@ -182,6 +191,7 @@ body.light-mode {
 
   transition: all 0.3s ease;
 }
+
 
 /* =========================================
    PRIMARY BUTTON
@@ -204,6 +214,7 @@ body.light-mode {
     0 0 20px var(--hero-cyan),
     0 0 40px var(--hero-cyan-glow);
 }
+
 
 /* =========================================
    SECONDARY BUTTON
@@ -234,6 +245,7 @@ body.light-mode {
     0 0 30px var(--hero-cyan-soft);
 }
 
+
 /* =========================================
    SOCIAL ICONS
 ========================================= */
@@ -261,6 +273,7 @@ body.light-mode {
   border-radius: 8px;
 
   color: var(--hero-cyan);
+
   background: var(--hero-card);
 
   text-decoration: none;
@@ -293,6 +306,7 @@ body.light-mode {
   color: #ffffff;
 }
 
+
 /* =========================================
    MINI TECHNOLOGIES
 ========================================= */
@@ -312,12 +326,14 @@ body.light-mode {
   border-radius: 20px;
 
   background: var(--hero-card);
+
   border: 1px solid var(--hero-cyan-soft);
 
   color: var(--hero-muted);
 
   font-size: 12px;
 }
+
 
 /* =========================================
    HERO VISUAL
@@ -333,7 +349,10 @@ body.light-mode {
   justify-content: center;
 
   min-width: 0;
+
+  isolation: isolate;
 }
+
 
 /* =========================================
    BACKGROUND GLOW
@@ -360,6 +379,8 @@ body.light-mode {
   animation: glowPulse 4s ease-in-out infinite;
 
   pointer-events: none;
+
+  z-index: 1;
 }
 
 @keyframes glowPulse {
@@ -374,6 +395,7 @@ body.light-mode {
     opacity: 1;
   }
 }
+
 
 /* =========================================
    NEON CIRCLE
@@ -396,11 +418,14 @@ body.light-mode {
     inset 0 0 20px var(--hero-cyan),
     inset 0 0 50px var(--hero-cyan-soft);
 
-  animation: circleRotate 12s linear infinite;
+  animation:
+    circleRotate 12s linear infinite;
 
   transition:
     border-color 0.4s ease,
     box-shadow 0.4s ease;
+
+  z-index: 2;
 }
 
 .neon-circle-inner {
@@ -427,144 +452,16 @@ body.light-mode {
   }
 }
 
-/* =========================================
-   PROFILE
-========================================= */
-
-.profile-wrapper {
-  position: absolute;
-
-  z-index: 8;
-
-  width: 300px;
-  height: 300px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.profile-image {
-  position: relative;
-
-  z-index: 10;
-
-  width: 270px;
-  height: 270px;
-
-  border-radius: 50%;
-
-  overflow: hidden;
-
-  border: 4px solid var(--hero-cyan-glow);
-
-  background: var(--hero-bg-second);
-
-  box-shadow:
-    0 0 10px rgba(0, 234, 255, 0.25),
-    0 0 20px rgba(0, 234, 255, 0.1);
-
-  transition:
-    background 0.4s ease,
-    border-color 0.4s ease,
-    box-shadow 0.4s ease;
-}
-
-.profile-image img {
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-
-  display: block;
-}
-
-/* =========================================
-   PROFILE RINGS
-========================================= */
-
-.profile-ring {
-  position: absolute;
-
-  border-radius: 50%;
-
-  pointer-events: none;
-
-  z-index: 6;
-}
-
-/* =========================================
-   FIRST MOVING RING
-========================================= */
-
-.ring-one {
-  width: 320px;
-  height: 320px;
-
-  border: 2px solid transparent;
-
-  border-top-color: var(--hero-cyan);
-  border-right-color: var(--hero-cyan);
-
-  box-shadow:
-    0 0 3px rgba(0, 234, 255, 0.35);
-
-  animation:
-    ringRotate 4s linear infinite;
-}
-
-/* =========================================
-   SECOND MOVING RING
-========================================= */
-
-.ring-two {
-  width: 350px;
-  height: 350px;
-
-  border: 2px solid transparent;
-
-  border-bottom-color: #a970ff;
-  border-left-color: #a970ff;
-
-  box-shadow:
-    0 0 3px rgba(169, 112, 255, 0.3);
-
-  animation:
-    ringRotateReverse 6s linear infinite;
-}
-
-/* =========================================
-   RING ROTATION
-========================================= */
-
-@keyframes ringRotate {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes ringRotateReverse {
-  from {
-    transform: rotate(360deg);
-  }
-
-  to {
-    transform: rotate(0deg);
-  }
-}
 
 /* =========================================
    LAPTOP
+   LAPTOP ALWAYS STAYS BEHIND PHOTO
 ========================================= */
 
 .laptop {
   position: absolute;
 
-  z-index: 4;
+  z-index: 3;
 
   width: 440px;
 
@@ -584,7 +481,10 @@ body.light-mode {
     );
 
   opacity: 0.95;
+
+  pointer-events: none;
 }
+
 
 /* =========================================
    LAPTOP SCREEN
@@ -627,6 +527,23 @@ body.light-mode {
     box-shadow 0.4s ease;
 }
 
+.laptop-screen::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0.08),
+      transparent 35%
+    );
+
+  pointer-events: none;
+}
+
 @keyframes laptopGlow {
   0%,
   100% {
@@ -644,26 +561,6 @@ body.light-mode {
   }
 }
 
-/* =========================================
-   SCREEN GLASS
-========================================= */
-
-.laptop-screen::before {
-  content: "";
-
-  position: absolute;
-
-  inset: 0;
-
-  background:
-    linear-gradient(
-      120deg,
-      rgba(255, 255, 255, 0.08),
-      transparent 35%
-    );
-
-  pointer-events: none;
-}
 
 /* =========================================
    SCREEN TOP
@@ -710,6 +607,7 @@ body.light-mode {
   margin-left: 10px;
 }
 
+
 /* =========================================
    CODE ON LAPTOP
 ========================================= */
@@ -724,7 +622,6 @@ body.light-mode {
     monospace;
 
   font-size: 11px;
-
   line-height: 1.75;
 
   color: var(--hero-code);
@@ -772,6 +669,11 @@ body.light-mode {
     0 0 12px var(--hero-cyan-soft);
 }
 
+
+/* =========================================
+   SCREEN GLOW
+========================================= */
+
 .screen-glow {
   position: absolute;
 
@@ -801,6 +703,7 @@ body.light-mode {
     opacity: 0.3;
   }
 }
+
 
 /* =========================================
    LAPTOP BASE
@@ -866,6 +769,171 @@ body.light-mode {
   background: #151b26;
 }
 
+
+/* =========================================
+   PROFILE WRAPPER
+   PHOTO IS ALWAYS IN FRONT
+========================================= */
+
+.profile-wrapper {
+  position: absolute;
+
+  z-index: 20;
+
+  width: 300px;
+  height: 300px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  isolation: isolate;
+}
+
+
+/* =========================================
+   PROFILE IMAGE
+========================================= */
+
+.profile-image {
+  position: relative;
+
+  z-index: 30;
+
+  width: 270px;
+  height: 270px;
+
+  border-radius: 50%;
+
+  overflow: hidden;
+
+  border:
+    4px solid var(--hero-cyan-glow);
+
+  background:
+    var(--hero-bg-second);
+
+  box-shadow:
+    0 0 10px rgba(0, 234, 255, 0.35),
+    0 0 25px rgba(0, 234, 255, 0.25),
+    0 0 50px rgba(0, 234, 255, 0.12);
+
+  transition:
+    background 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+
+  transform: translateZ(0);
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  position: relative;
+
+  z-index: 50;
+}
+
+
+/* =========================================
+   PROFILE RINGS
+========================================= */
+
+.profile-ring {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  z-index: 25;
+}
+
+
+/* =========================================
+   FIRST MOVING RING
+========================================= */
+
+.ring-one {
+  width: 320px;
+  height: 320px;
+
+  border:
+    2px solid transparent;
+
+  border-top-color:
+    var(--hero-cyan);
+
+  border-right-color:
+    var(--hero-cyan);
+
+  box-shadow:
+    0 0 5px rgba(0, 234, 255, 0.45);
+
+  animation:
+    ringRotate 4s linear infinite;
+
+  z-index: 25;
+}
+
+
+/* =========================================
+   SECOND MOVING RING
+========================================= */
+
+.ring-two {
+  width: 350px;
+  height: 350px;
+
+  border:
+    2px solid transparent;
+
+  border-bottom-color:
+    #a970ff;
+
+  border-left-color:
+    #a970ff;
+
+  box-shadow:
+    0 0 5px rgba(169, 112, 255, 0.4);
+
+  animation:
+    ringRotateReverse 6s linear infinite;
+
+  z-index: 24;
+}
+
+
+/* =========================================
+   RING ROTATION
+========================================= */
+
+@keyframes ringRotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes ringRotateReverse {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+
 /* =========================================
    FLOATING CODE
 ========================================= */
@@ -873,7 +941,7 @@ body.light-mode {
 .floating-code {
   position: absolute;
 
-  z-index: 14;
+  z-index: 40;
 
   color: var(--hero-cyan);
 
@@ -935,6 +1003,7 @@ body.light-mode {
   }
 }
 
+
 /* =========================================
    STARS
 ========================================= */
@@ -951,8 +1020,6 @@ body.light-mode {
   pointer-events: none;
 }
 
-/* Main stars */
-
 .star {
   position: absolute;
 
@@ -964,7 +1031,8 @@ body.light-mode {
 
   border-radius: 50%;
 
-  background: var(--hero-star);
+  background:
+    var(--hero-star);
 
   box-shadow:
     0 0 6px var(--hero-star-glow),
@@ -987,6 +1055,7 @@ body.light-mode {
     box-shadow 0.4s ease;
 }
 
+
 /* Bigger stars */
 
 .star:nth-child(3n) {
@@ -1001,6 +1070,7 @@ body.light-mode {
     0 0 30px var(--hero-star-glow);
 }
 
+
 /* Extra bright stars */
 
 .star:nth-child(5n) {
@@ -1014,6 +1084,7 @@ body.light-mode {
     0 0 22px var(--hero-star-glow),
     0 0 35px var(--hero-star-glow);
 }
+
 
 /* =========================================
    STAR ANIMATION
@@ -1049,6 +1120,7 @@ body.light-mode {
   }
 }
 
+
 /* =========================================
    RESPONSIVE - LARGE TABLET
 ========================================= */
@@ -1056,11 +1128,13 @@ body.light-mode {
 @media (max-width: 1100px) {
   .hero-container {
     width: min(1100px, 94%);
+
     gap: 10px;
   }
 
   .hero-content h1 {
-    font-size: clamp(42px, 6vw, 68px);
+    font-size:
+      clamp(42px, 6vw, 68px);
   }
 
   .hero-visual {
@@ -1068,8 +1142,10 @@ body.light-mode {
   }
 }
 
+
 /* =========================================
    RESPONSIVE - TABLET
+   PHOTO FIRST / TEXT BELOW
 ========================================= */
 
 @media (max-width: 1000px) {
@@ -1078,17 +1154,39 @@ body.light-mode {
   }
 
   .hero-container {
-    grid-template-columns: 1fr;
-
     width: min(850px, 94%);
 
-    padding-top: 110px;
+    padding-top: 90px;
     padding-bottom: 80px;
 
-    gap: 20px;
+    gap: 5px;
+
+    /*
+      مهم:
+      در تبلت و موبایل عکس بالا
+      و متن پایین قرار می‌گیرد.
+    */
+    display: flex;
+    flex-direction: column;
   }
 
+  /* عکس / لپ‌تاپ اول */
+  .hero-visual {
+    order: 1;
+
+    width: 100%;
+
+    height: 600px;
+
+    transform: scale(0.9);
+  }
+
+  /* نوشته‌ها دوم */
   .hero-content {
+    order: 2;
+
+    width: 100%;
+
     text-align: center;
   }
 
@@ -1107,17 +1205,12 @@ body.light-mode {
     justify-content: center;
   }
 
-  .hero-visual {
-    height: 600px;
-
-    transform: scale(0.9);
-  }
-
   .hero-glow {
     width: 420px;
     height: 420px;
   }
 }
+
 
 /* =========================================
    RESPONSIVE - SMALL TABLET
@@ -1125,11 +1218,29 @@ body.light-mode {
 
 @media (max-width: 768px) {
   .hero-container {
-    padding-top: 100px;
+    width: 94%;
+
+    padding-top: 80px;
+    padding-bottom: 60px;
+
+    gap: 0;
+  }
+
+  .hero-visual {
+    order: 1;
+
+    height: 530px;
+
+    transform: scale(0.82);
+  }
+
+  .hero-content {
+    order: 2;
   }
 
   .hero-content h1 {
-    font-size: clamp(40px, 10vw, 58px);
+    font-size:
+      clamp(40px, 10vw, 58px);
   }
 
   .hero-content h2 {
@@ -1138,13 +1249,10 @@ body.light-mode {
 
   .hero-description {
     max-width: 650px;
-    font-size: 15px;
-    line-height: 1.7;
-  }
 
-  .hero-visual {
-    height: 530px;
-    transform: scale(0.82);
+    font-size: 15px;
+
+    line-height: 1.7;
   }
 
   .hero-glow {
@@ -1157,8 +1265,10 @@ body.light-mode {
   }
 }
 
+
 /* =========================================
    RESPONSIVE - MOBILE
+   PHOTO FIRST / LAPTOP BEHIND
 ========================================= */
 
 @media (max-width: 600px) {
@@ -1174,24 +1284,68 @@ body.light-mode {
       var(--hero-bg);
   }
 
+
+  /* =====================================
+     MAIN ORDER
+  ===================================== */
+
   .hero-container {
     width: 94%;
 
-    padding-top: 90px;
+    padding-top: 70px;
     padding-bottom: 50px;
 
-    gap: 5px;
+    gap: 0;
+
+    display: flex;
+    flex-direction: column;
   }
+
+  /*
+    PHOTO FIRST
+  */
+  .hero-visual {
+    order: 1;
+
+    width: 100%;
+
+    height: 470px;
+
+    transform: scale(0.75);
+
+    isolation: isolate;
+
+    overflow: visible;
+  }
+
+  /*
+    TEXT SECOND
+  */
+  .hero-content {
+    order: 2;
+
+    width: 100%;
+
+    text-align: center;
+  }
+
+
+  /* =====================================
+     TEXT
+  ===================================== */
 
   .hero-small-title {
     margin-bottom: 10px;
 
     font-size: 11px;
+
     letter-spacing: 2.5px;
   }
 
   .hero-content h1 {
-    font-size: clamp(38px, 12vw, 50px);
+    font-size:
+      clamp(38px, 12vw, 50px);
+
     line-height: 1.08;
   }
 
@@ -1203,13 +1357,21 @@ body.light-mode {
 
   .hero-description {
     font-size: 14px;
+
     line-height: 1.7;
 
     margin-bottom: 22px;
   }
 
+
+  /* =====================================
+     BUTTONS
+  ===================================== */
+
   .hero-buttons {
     gap: 10px;
+
+    justify-content: center;
   }
 
   .hero-btn {
@@ -1218,10 +1380,17 @@ body.light-mode {
     font-size: 13px;
   }
 
+
+  /* =====================================
+     SOCIALS
+  ===================================== */
+
   .hero-socials {
     gap: 9px;
 
     margin-top: 20px;
+
+    justify-content: center;
   }
 
   .hero-socials a {
@@ -1235,10 +1404,17 @@ body.light-mode {
     font-size: 16px;
   }
 
+
+  /* =====================================
+     TECHNOLOGIES
+  ===================================== */
+
   .tech-mini {
     gap: 7px;
 
     margin-top: 20px;
+
+    justify-content: center;
   }
 
   .tech-mini span {
@@ -1247,47 +1423,118 @@ body.light-mode {
     font-size: 10px;
   }
 
-  .hero-visual {
-    height: 470px;
 
-    transform: scale(0.75);
-  }
+  /* =====================================
+     BACKGROUND GLOW
+  ===================================== */
 
   .hero-glow {
     width: 340px;
     height: 340px;
+
+    z-index: 1;
   }
+
+
+  /* =====================================
+     NEON CIRCLE
+  ===================================== */
 
   .neon-circle {
     width: 290px;
     height: 290px;
+
+    z-index: 2;
   }
+
+
+  /* =====================================
+     LAPTOP BEHIND PHOTO
+  ===================================== */
+
+  .laptop {
+    width: 310px;
+
+    left: 50%;
+    top: 57%;
+
+    transform:
+      translate(-50%, -50%)
+      rotate(-7deg);
+
+    opacity: 0.9;
+
+    z-index: 3;
+  }
+
+
+  /* =====================================
+     PROFILE IN FRONT
+  ===================================== */
 
   .profile-wrapper {
     width: 220px;
     height: 220px;
+
+    left: 50%;
+    top: 42%;
+
+    transform:
+      translate(-50%, -50%);
+
+    z-index: 30;
   }
 
   .profile-image {
     width: 200px;
     height: 200px;
+
+    z-index: 40;
+
+    border-width: 4px;
+
+    box-shadow:
+      0 0 12px var(--hero-cyan),
+      0 0 30px var(--hero-cyan-glow),
+      0 0 60px var(--hero-cyan-soft);
+  }
+
+  .profile-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: 50;
+  }
+
+
+  /* =====================================
+     RINGS AROUND PHOTO
+  ===================================== */
+
+  .profile-ring {
+    pointer-events: none;
   }
 
   .ring-one {
     width: 240px;
     height: 240px;
+
+    z-index: 35;
   }
 
   .ring-two {
     width: 270px;
     height: 270px;
+
+    z-index: 34;
   }
 
-  .laptop {
-    width: 310px;
 
-    top: 55%;
-  }
+  /* =====================================
+     LAPTOP CODE
+  ===================================== */
 
   .laptop-screen {
     height: 190px;
@@ -1297,6 +1544,7 @@ body.light-mode {
     padding: 10px 12px;
 
     font-size: 7px;
+
     line-height: 1.55;
   }
 
@@ -1317,6 +1565,7 @@ body.light-mode {
 
   .keyboard {
     top: 4px;
+
     height: 6px;
   }
 
@@ -1325,8 +1574,15 @@ body.light-mode {
     height: 7px;
   }
 
+
+  /* =====================================
+     FLOATING CODE
+  ===================================== */
+
   .floating-code {
     font-size: 15px;
+
+    z-index: 50;
   }
 
   .code-one {
@@ -1345,15 +1601,28 @@ body.light-mode {
   }
 }
 
+
 /* =========================================
-   RESPONSIVE - VERY SMALL MOBILE
+   VERY SMALL MOBILE
 ========================================= */
 
 @media (max-width: 400px) {
   .hero-container {
     width: 92%;
 
-    padding-top: 80px;
+    padding-top: 60px;
+  }
+
+  .hero-visual {
+    order: 1;
+
+    height: 420px;
+
+    transform: scale(0.65);
+  }
+
+  .hero-content {
+    order: 2;
   }
 
   .hero-content h1 {
@@ -1376,17 +1645,13 @@ body.light-mode {
 
   .hero-btn {
     width: 100%;
+
     max-width: 240px;
-  }
-
-  .hero-visual {
-    height: 420px;
-
-    transform: scale(0.65);
   }
 
   .tech-mini {
     max-width: 300px;
+
     margin-left: auto;
     margin-right: auto;
   }
@@ -1394,15 +1659,78 @@ body.light-mode {
   .tech-mini span {
     font-size: 9px;
   }
+
+
+  /* =====================================
+     PHOTO STILL IN FRONT
+  ===================================== */
+
+  .profile-wrapper {
+    width: 210px;
+    height: 210px;
+
+    left: 50%;
+    top: 42%;
+
+    transform:
+      translate(-50%, -50%);
+
+    z-index: 30;
+  }
+
+  .profile-image {
+    width: 190px;
+    height: 190px;
+
+    z-index: 40;
+  }
+
+  .ring-one {
+    width: 230px;
+    height: 230px;
+
+    z-index: 35;
+  }
+
+  .ring-two {
+    width: 255px;
+    height: 255px;
+
+    z-index: 34;
+  }
+
+
+  /* Laptop remains behind */
+
+  .laptop {
+    width: 290px;
+
+    top: 59%;
+
+    z-index: 3;
+  }
 }
 
+
 /* =========================================
-   RESPONSIVE - EXTRA SMALL
+   EXTRA SMALL MOBILE
 ========================================= */
 
 @media (max-width: 320px) {
   .hero-container {
     width: 94%;
+  }
+
+  .hero-visual {
+    order: 1;
+
+    height: 390px;
+
+    transform: scale(0.58);
+  }
+
+  .hero-content {
+    order: 2;
   }
 
   .hero-content h1 {
@@ -1417,17 +1745,59 @@ body.light-mode {
     font-size: 12px;
   }
 
-  .hero-visual {
-    height: 390px;
-
-    transform: scale(0.58);
-  }
-
   .hero-socials a {
     width: 38px;
     height: 38px;
   }
+
+
+  /* =====================================
+     PHOTO ALWAYS FRONT
+  ===================================== */
+
+  .profile-wrapper {
+    width: 195px;
+    height: 195px;
+
+    left: 50%;
+    top: 41%;
+
+    transform:
+      translate(-50%, -50%);
+
+    z-index: 30;
+  }
+
+  .profile-image {
+    width: 175px;
+    height: 175px;
+
+    z-index: 40;
+  }
+
+  .ring-one {
+    width: 215px;
+    height: 215px;
+
+    z-index: 35;
+  }
+
+  .ring-two {
+    width: 240px;
+    height: 240px;
+
+    z-index: 34;
+  }
+
+  .laptop {
+    width: 270px;
+
+    top: 60%;
+
+    z-index: 3;
+  }
 }
+
 
 /* =========================================
    ACCESSIBILITY
@@ -1435,9 +1805,12 @@ body.light-mode {
 
 .hero-btn:focus-visible,
 .hero-socials a:focus-visible {
-  outline: 2px solid var(--hero-cyan);
+  outline:
+    2px solid var(--hero-cyan);
+
   outline-offset: 4px;
 }
+
 
 /* =========================================
    REDUCED MOTION
@@ -1447,10 +1820,17 @@ body.light-mode {
   .hero *,
   .hero *::before,
   .hero *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    scroll-behavior:
+      auto !important;
+
+    transition-duration:
+      0.01ms !important;
   }
 }
 
